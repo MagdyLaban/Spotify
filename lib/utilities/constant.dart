@@ -19,3 +19,17 @@ const kLogInLabelTextStyle = TextStyle(
   fontWeight: FontWeight.w700,
   fontSize: 17.0,
 );
+
+const kSearchBarStyle = InputDecoration(
+  filled: true,
+  fillColor: Color(0xff2A2A2A),
+  prefixIcon: Icon(Icons.search,color: Colors.grey,),
+  hintStyle: TextStyle(
+    color: Colors.grey,
+  ),
+  border: OutlineInputBorder(
+    borderRadius: BorderRadius.all(
+      Radius.circular(5.0),
+    ),
+  ),
+);

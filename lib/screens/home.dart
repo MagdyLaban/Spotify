@@ -3,6 +3,8 @@ import 'package:spotifynew/components/rounded_button.dart';
 import 'package:spotifynew/utilities/constant.dart';
 
 class HomeScreen extends StatefulWidget {
+  static const String id = 'home screen';
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
