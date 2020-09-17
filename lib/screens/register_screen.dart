@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:spotifynew/components/rounded_button.dart';
 import 'package:spotifynew/utilities/constant.dart';
 
-class HomeScreen extends StatefulWidget {
-  static const String id = 'home screen';
+class RegisterScreen extends StatefulWidget {
+  static const String id = 'register screen';
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _RegisterScreenState createState() => _RegisterScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;

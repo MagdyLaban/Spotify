@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:spotifynew/screens/artists_screen.dart';
-import 'package:spotifynew/screens/home.dart';
-
-import 'screens/home.dart';
-import 'screens/home.dart';
-import 'screens/home.dart';
-import 'screens/home.dart';
-import 'screens/splash.dart';
-import 'screens/splash.dart';
-import 'screens/splash.dart';
+import 'package:spotifynew/screens/bottom_nav_screens/home_screen.dart';
+import 'package:spotifynew/screens/bottom_nav_screens/library_screen.dart';
+import 'package:spotifynew/screens/bottom_nav_screens/premium_screen.dart';
+import 'package:spotifynew/screens/bottom_nav_screens/search_screen.dart';
+import 'package:spotifynew/screens/register_screen.dart';
+import 'screens/bottom_nav_screens/bottom_nav_bar.dart';
+import 'screens/register_screen.dart';
+import 'screens/splash_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,11 +19,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute:HomeScreen.id,
+      initialRoute:BottomNavBar.id,
+
       routes: {
         SplashScreen.id : (context) =>SplashScreen(),
-        HomeScreen.id : (context) => HomeScreen(),
+        RegisterScreen.id : (context) => RegisterScreen(),
         ArtistsScreen.id : (context) => ArtistsScreen(),
+        BottomNavBar.id : (context) => BottomNavBar(),
       },
     );
   }

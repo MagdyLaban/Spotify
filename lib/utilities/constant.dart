@@ -33,3 +33,5 @@ const kSearchBarStyle = InputDecoration(
     ),
   ),
 );
+
+const kBackgroundColor = Color(0xff121212);
