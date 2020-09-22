@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:spotifynew/utilities/constant.dart';
 
 class SliverAppBarWithSearch extends StatelessWidget {
+  SliverAppBarWithSearch({this.text});
+  final String text;
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
@@ -16,8 +18,9 @@ class SliverAppBarWithSearch extends StatelessWidget {
         background: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Text(
-            'Choose 3 or more artists you like.',
-            style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 30),),
+            text,
+            style: kAppBarTitleTextStile,
+        ),
         ),
         collapseMode: CollapseMode.parallax,
       ),

@@ -35,3 +35,4 @@ const kSearchBarStyle = InputDecoration(
 );
 
 const kBackgroundColor = Color(0xff121212);
+const kAppBarTitleTextStile = TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 30);

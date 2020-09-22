@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:spotifynew/components/sliver_appbar_with_search.dart';
 import 'package:spotifynew/components/artists_tiles_sliver_grid.dart';
+import 'package:spotifynew/screens/bottom_nav_screens/bottom_nav_bar.dart';
 import 'package:spotifynew/utilities/constant.dart';
+import 'package:spotifynew/components/rounded_action_button.dart';
 
 class ArtistsScreen extends StatefulWidget {
-
   static const String id = 'artists screen';
 
   @override
@@ -12,8 +13,6 @@ class ArtistsScreen extends StatefulWidget {
 }
 
 class _ArtistsScreenState extends State<ArtistsScreen> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,27 +21,23 @@ class _ArtistsScreenState extends State<ArtistsScreen> {
         padding: const EdgeInsets.only(top: 20),
         child: CustomScrollView(
           slivers: <Widget>[
-            SliverAppBarWithSearch(),
+            SliverAppBarWithSearch(
+              text: 'Choose 3 or more artists you like.',
+            ),
             ArtistsTilesSliverGrid(),
           ],
         ),
       ),
       floatingActionButton: Padding(
-        padding: const EdgeInsets.only(bottom: 15),
-        child: FloatingActionButton.extended(
-          elevation: 0,
+        padding: const EdgeInsets.only(bottom:10 ),
+        child: RoundedActionButton(
+          title: 'DONE',
           onPressed: () {
-            // Add your onPressed code here!
+            Navigator.pushNamed(context, BottomNavBar.id);
           },
-          label: Text('   DONE   ',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20),),
-          backgroundColor: Colors.white,
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
-
-
-
-
