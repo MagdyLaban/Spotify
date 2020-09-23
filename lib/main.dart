@@ -19,12 +19,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute:ArtistsScreen.id,
+      initialRoute:SearchScreen.id,
       routes: {
         SplashScreen.id : (context) =>SplashScreen(),
         RegisterScreen.id : (context) => RegisterScreen(),
         ArtistsScreen.id : (context) => ArtistsScreen(),
         BottomNavBar.id : (context) => BottomNavBar(),
+        SearchScreen.id : (context) => SearchScreen(),
       },
     );
   }

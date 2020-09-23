@@ -23,6 +23,7 @@ class _ArtistsScreenState extends State<ArtistsScreen> {
           slivers: <Widget>[
             SliverAppBarWithSearch(
               text: 'Choose 3 or more artists you like.',
+              style: kAppBarTitleTextStile,
             ),
             ArtistsTilesSliverGrid(),
           ],
