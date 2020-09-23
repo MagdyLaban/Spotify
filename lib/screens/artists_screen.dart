@@ -33,7 +33,7 @@ class _ArtistsScreenState extends State<ArtistsScreen> {
         child: RoundedActionButton(
           title: 'DONE',
           onPressed: () {
-            Navigator.pushNamed(context, BottomNavBar.id);
+            Navigator.pushReplacementNamed(context, BottomNavBar.id);
           },
         ),
       ),

@@ -24,7 +24,8 @@ class SliverAppBarWithSearch extends StatelessWidget {
         ),
         collapseMode: CollapseMode.parallax,
       ),
-
+      forceElevated: true,
+      elevation: 5,
       backgroundColor: Color(0xff121212),
       floating: false,
       pinned: true,

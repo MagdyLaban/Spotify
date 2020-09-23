@@ -49,8 +49,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.grey,
         onTap: _onItemTapped,
-
       ),
+
     );
   }
 }

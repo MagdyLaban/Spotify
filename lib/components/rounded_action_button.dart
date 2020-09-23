@@ -7,16 +7,14 @@ class RoundedActionButton extends StatelessWidget {
   final Function onPressed;
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
+    return RawMaterialButton(
       onPressed: onPressed,
-      color: Colors.white,
+      fillColor: Colors.white,
       child:Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25,vertical: 10),
             child: Text(title,style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20),),
           ),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
-      
     );
-
   }
 }
