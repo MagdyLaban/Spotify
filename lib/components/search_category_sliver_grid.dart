@@ -12,7 +12,7 @@ class CategoryTilesSliverGrid extends StatelessWidget {
         maxCrossAxisExtent: 180,
         crossAxisSpacing:15,
         mainAxisSpacing: 15,
-        childAspectRatio: 3/2
+        childAspectRatio: 1.8
       ),
       delegate: SliverChildBuilderDelegate(
             (BuildContext context, int index) {

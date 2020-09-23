@@ -4,11 +4,24 @@ class CategoryTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
-      width: 100,
+      child: Padding(
+        padding: const EdgeInsets.only(left: 10.0, top: 10.0),
+        child: Text(
+          'Category',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20.0,
+            fontWeight: FontWeight.w700
+          ),
+        ),
+      ),
       decoration: BoxDecoration(
-        color: Color(0xff86a4b0),
-        borderRadius: BorderRadius.circular(15.0)
+          gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Color(0xff046d50), Colors.greenAccent]
+          ),
+        borderRadius: BorderRadius.circular(6.0)
       ),
     );
   }
