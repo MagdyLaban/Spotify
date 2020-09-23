@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:spotifynew/screens/artists_screen.dart';
-import 'package:spotifynew/screens/bottom_nav_screens/home_screen.dart';
-import 'package:spotifynew/screens/bottom_nav_screens/library_screen.dart';
-import 'package:spotifynew/screens/bottom_nav_screens/premium_screen.dart';
-import 'package:spotifynew/screens/bottom_nav_screens/search_screen.dart';
 import 'package:spotifynew/screens/register_screen.dart';
-import 'screens/bottom_nav_screens/bottom_nav_bar.dart';
+import 'package:spotifynew/screens/settings_screen.dart';
+import 'screens/bottom_nav_screens/bottom_nav_bar_screen.dart';
 import 'screens/register_screen.dart';
 import 'screens/splash_screen.dart';
 
@@ -25,7 +23,7 @@ class MyApp extends StatelessWidget {
         RegisterScreen.id : (context) => RegisterScreen(),
         ArtistsScreen.id : (context) => ArtistsScreen(),
         BottomNavBar.id : (context) => BottomNavBar(),
-        SearchScreen.id : (context) => SearchScreen(),
+        SettingScreen.id: (context) => SettingScreen(),
       },
     );
   }

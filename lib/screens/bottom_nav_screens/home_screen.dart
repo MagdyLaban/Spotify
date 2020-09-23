@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotifynew/screens/settings_screen.dart';
 import 'package:spotifynew/utilities/constant.dart';
 import 'package:spotifynew/components/artists_tiles_sliver_grid.dart';
 
@@ -21,7 +22,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, SettingScreen.id);
+                      },
                       icon: Icon(
                         Icons.settings,
                         color: Colors.white,
@@ -32,7 +35,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               expandedHeight: 120,
             ),
-            ArtistsTilesSliverGrid(),
+            SliverPadding(
+              padding: EdgeInsets.all(10),
+            ),
           ],
         ));
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spotifynew/components/sliver_appbar_with_search.dart';
 import 'package:spotifynew/utilities/constant.dart';
-import 'bottom_nav_bar.dart';
+import 'bottom_nav_bar_screen.dart';
 import 'package:spotifynew/components/search_category_sliver_grid.dart';
 class SearchScreen extends StatefulWidget {
   static const String id = 'search screen';

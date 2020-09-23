@@ -37,6 +37,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+
         backgroundColor: Color(0xff282828),
         type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,

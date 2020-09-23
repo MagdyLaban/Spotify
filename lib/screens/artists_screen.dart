@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spotifynew/components/sliver_appbar_with_search.dart';
 import 'package:spotifynew/components/artists_tiles_sliver_grid.dart';
-import 'package:spotifynew/screens/bottom_nav_screens/bottom_nav_bar.dart';
+import 'package:spotifynew/screens/bottom_nav_screens/bottom_nav_bar_screen.dart';
 import 'package:spotifynew/utilities/constant.dart';
 import 'package:spotifynew/components/rounded_action_button.dart';
 
