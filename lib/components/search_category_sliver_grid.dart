@@ -1,7 +1,7 @@
 import 'package:spotifynew/utilities/constant.dart';
 import 'package:spotifynew/components/artist_tile.dart';
 import 'package:flutter/material.dart';
-import 'category_tlle.dart';
+import 'category_tile.dart';
 
 class CategoryTilesSliverGrid extends StatelessWidget {
 

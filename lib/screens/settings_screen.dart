@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:spotifynew/screens/bottom_nav_screens/bottom_nav_bar_screen.dart';
 import 'package:spotifynew/screens/bottom_nav_screens/premium_screen.dart';
 import 'package:spotifynew/screens/splash_screen.dart';
 import 'package:spotifynew/utilities/constant.dart';
@@ -64,7 +65,7 @@ class _SettingScreenState extends State<SettingScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => PremiumScreen()));
+                            builder: (context) => PremiumScreen(), ));
                   },
                 ),
               ),

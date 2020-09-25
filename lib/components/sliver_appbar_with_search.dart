@@ -11,29 +11,28 @@ class SliverAppBarWithSearch extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       flexibleSpace: FlexibleSpaceBar(
-        titlePadding: EdgeInsets.symmetric(horizontal: 0,vertical: 15.0),
-        title: Expanded(
-          child: Container(
-            height: 40,
-            child: TextField(
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.all(10.0),
-                  filled: true,
-                  fillColor: Color(0xffffffff),
-                  prefixIcon: Icon(Icons.search,color: Colors.grey[600],),
-                  hintText: 'Artist,Song or Alboms',
-                  hintStyle: TextStyle(
-                    color: kBackgroundColor,
-                    fontSize: 14,
 
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(5.0),
-                    ),
+        titlePadding: EdgeInsets.symmetric(horizontal: 0,vertical: 15.0),
+        title: Container(
+          height: 40,
+          child: TextField(
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.all(10.0),
+                filled: true,
+                fillColor: Color(0xffffffff),
+                prefixIcon: Icon(Icons.search,color: Colors.grey[600],),
+                hintText: 'Artist,Song or Albums',
+                hintStyle: TextStyle(
+                  color: kBackgroundColor,
+                  fontSize: 14,
+
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(5.0),
                   ),
                 ),
-            ),
+              ),
           ),
         ),
         background: Center(
@@ -42,7 +41,7 @@ class SliverAppBarWithSearch extends StatelessWidget {
             style: style,
         ),
         ),
-        collapseMode: CollapseMode.parallax,
+        collapseMode: CollapseMode.pin,
       ),
       forceElevated: true,
       elevation: 5,
