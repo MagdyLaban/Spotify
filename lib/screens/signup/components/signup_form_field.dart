@@ -3,7 +3,8 @@ import 'package:spotifynew/utilities/constant.dart';
 
 class SignUpForm extends StatefulWidget {
   final bool isPasswordScreen;
-  SignUpForm({@required this.isPasswordScreen});
+  final String screenId;
+  SignUpForm({this.isPasswordScreen, this.screenId});
   @override
   _SignUpFormState createState() => _SignUpFormState();
 }

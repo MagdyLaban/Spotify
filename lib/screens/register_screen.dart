@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spotifynew/components/rounded_button.dart';
+import 'package:spotifynew/screens/signup/components/rounded_button.dart';
 import 'package:spotifynew/screens/signup/email.dart';
 import 'package:spotifynew/utilities/constant.dart';
 
