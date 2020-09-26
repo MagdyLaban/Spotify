@@ -35,6 +35,12 @@ const kLogInCenterTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
 );
 
+const kNextButtonTextStyle = TextStyle(
+  color: Colors.black,
+  fontWeight: FontWeight.w700,
+  fontSize: 17.0,
+);
+
 const kSignUpFormTextStyle = TextStyle(
   color: Colors.white,
   fontWeight: FontWeight.w400,
