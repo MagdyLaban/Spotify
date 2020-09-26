@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spotifynew/components/rounded_button.dart';
+import 'package:spotifynew/screens/signup/email.dart';
 import 'package:spotifynew/utilities/constant.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -17,19 +18,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       body: Container(
         width: screenSize.width,
         height: screenSize.height,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
-            colors: [
-              Color(0xFF000000),
-              Color(0xFF000000),
-              Color(0xFF000000),
-              Color(0xFF191919),
-              Color(0xFF4c4c4c),
-            ],
-          ),
-        ),
+        decoration: kHomeScreenGradient,
         child: Column(
           children: [
             Expanded(
@@ -57,9 +46,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
             Column(
               children: [
                 RoundButton(
+                  isOnlyText: true,
                   text: 'Sign up free',
+                  onPress: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => EmailScreen()));
+                  },
                 ),
                 RoundButton(
+                  isOnlyText: false,
                   text: 'Continue with phone number',
                   labelIcon: Icon(
                     Icons.phone_iphone,
@@ -67,6 +62,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                 ),
                 RoundButton(
+                  isOnlyText: false,
                   text: 'Continue with Facebook',
                   labelIcon: Icon(
                     Icons.phone_iphone,

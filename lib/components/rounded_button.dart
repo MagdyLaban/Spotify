@@ -5,42 +5,38 @@ class RoundButton extends StatelessWidget {
   final String text;
   final Icon labelIcon;
   final Function onPress;
+  final bool isOnlyText;
 
-  const RoundButton({Key key, this.text, this.onPress, this.labelIcon})
+  const RoundButton(
+      {Key key,
+      this.text,
+      this.onPress,
+      this.labelIcon,
+      @required this.isOnlyText})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
-    return Padding(
-      padding: EdgeInsets.only(top: screenSize.height * 0.02),
-      child: GestureDetector(
-        onTap: onPress,
-        child: Container(
-          width: screenSize.width - 50,
-          height: 45.0,
-          decoration: text == 'Sign up free'
-              ? BoxDecoration(
-                  borderRadius: BorderRadius.circular(40.0),
-                  color: kPrimaryColor,
-                )
-              : BoxDecoration(
-                  borderRadius: BorderRadius.circular(40.0),
-                  border: Border.all(
-                    width: 1,
-                    color: Colors.grey,
-                  ),
+    return GestureDetector(
+      onTap: onPress,
+      child: Container(
+        padding: EdgeInsets.only(top: screenSize.height * 0.02),
+        width: screenSize.width - 50,
+        height: 45.0,
+        decoration: isOnlyText ? kSignUpFreeDecoration : kSignUpOtherDecoration,
+        child: isOnlyText
+            ? Center(
+                child: Text(
+                  'Sign up free',
+                  style: kLogInLabelTextStyle,
                 ),
-          child: text == 'Sign up free'
-              ? Center(
-                  child: Text(
-                    'Sign up free',
-                    style: kLogInLabelTextStyle,
-                  ),
-                )
-              : Row(
-                  children: [
-                    Padding(
+              )
+            : Row(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: Padding(
                       padding: EdgeInsets.only(
                         left: 15.0,
                         right: 35.0,
@@ -49,15 +45,17 @@ class RoundButton extends StatelessWidget {
                       ),
                       child: labelIcon,
                     ),
-                    Center(
-                      child: Text(
-                        text,
-                        style: kLogInLabelTextStyle,
-                      ),
+                  ),
+                  Expanded(
+                    flex: 35,
+                    child: Text(
+                      text,
+                      style: kLogInLabelTextStyle,
+                      textAlign: TextAlign.center,
                     ),
-                  ],
-                ),
-        ),
+                  ),
+                ],
+              ),
       ),
     );
   }
