@@ -92,3 +92,8 @@ const kLabelTextStyle = TextStyle(
   color: Colors.white,
   fontWeight: FontWeight.bold,
 );
+
+const kAppBarTitleTextStile =
+    TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 30);
+
+const kTileNameTextStyle = TextStyle(color: Colors.white, fontSize: 13);

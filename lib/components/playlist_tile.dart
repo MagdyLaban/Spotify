@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spotifynew/utilities/constant.dart';
 
-class SongTile extends StatelessWidget {
+class PlaylistTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -11,13 +11,13 @@ class SongTile extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only( right: 15,bottom: 5),
           child: Container(
-            width: 100,
-            height: 100,
+            width: 120,
+            height: 120,
             color: kSecondaryColor,
-            child: Icon(Icons.music_note,color: Colors.grey,size: 50,),
+            child: Icon(Icons.playlist_play,color: Colors.grey,size: 60,),
           ),
         ),
-        Text('Song Name',style: kTileNameTextStyle,)
+        Text('Playlist Name',style: kTileNameTextStyle)
       ],
     );
   }

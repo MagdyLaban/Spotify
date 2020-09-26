@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:spotifynew/components/sliver_appbar_with_search.dart';
+import 'package:spotifynew/components/sliver_appbar.dart';
 import 'package:spotifynew/utilities/constant.dart';
 import 'bottom_nav_bar_screen.dart';
-import 'package:spotifynew/components/search_category_sliver_grid.dart';
+import 'package:spotifynew/components/category_sliver_grid.dart';
+
 class SearchScreen extends StatefulWidget {
   static const String id = 'search screen';
   @override
@@ -15,7 +16,7 @@ class _SearchScreenState extends State<SearchScreen> {
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: CustomScrollView(
           slivers: [
             SliverAppBarWithSearch(
@@ -26,8 +27,20 @@ class _SearchScreenState extends State<SearchScreen> {
                 color: Colors.white,
               ),
             ),
-            SliverPadding(
-              padding : EdgeInsets.all(10.0)
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (BuildContext context, int index) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 15),
+                    child: Text(
+                      'Browse all',
+                      style: kAppBarTitleTextStile.copyWith(fontSize: 25),
+                    ),
+                  );
+                },
+                childCount: 1,
+              ),
             ),
             CategoryTilesSliverGrid(),
           ],
