@@ -1,7 +1,7 @@
 import 'package:spotifynew/utilities/constant.dart';
 import 'package:spotifynew/components/artist_tile.dart';
 import 'package:flutter/material.dart';
-import 'category_tlle.dart';
+import 'category_tile.dart';
 
 class CategoryTilesSliverGrid extends StatelessWidget {
 
@@ -12,7 +12,7 @@ class CategoryTilesSliverGrid extends StatelessWidget {
         maxCrossAxisExtent: 180,
         crossAxisSpacing:15,
         mainAxisSpacing: 15,
-        childAspectRatio: 3/2
+        childAspectRatio: 1.8
       ),
       delegate: SliverChildBuilderDelegate(
             (BuildContext context, int index) {

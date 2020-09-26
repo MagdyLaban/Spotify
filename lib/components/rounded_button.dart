@@ -21,7 +21,7 @@ class RoundButton extends StatelessWidget {
     return GestureDetector(
       onTap: onPress,
       child: Container(
-        padding: EdgeInsets.only(top: screenSize.height * 0.02),
+        margin: EdgeInsets.only(top: screenSize.height * 0.02),
         width: screenSize.width - 50,
         height: 45.0,
         decoration: isOnlyText ? kSignUpFreeDecoration : kSignUpOtherDecoration,

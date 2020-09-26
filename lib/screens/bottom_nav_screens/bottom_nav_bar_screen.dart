@@ -8,14 +8,14 @@ import 'package:spotifynew/utilities/constant.dart';
 
 class BottomNavBar extends StatefulWidget {
   static const String id = 'bottom nav screen';
-
   @override
   _BottomNavBarState createState() => _BottomNavBarState();
 }
 
-class _BottomNavBarState extends State<BottomNavBar> {
-  int _selectedIndex = 0;
 
+class _BottomNavBarState extends State<BottomNavBar> {
+
+  int _selectedIndex = 0;
   List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     SearchScreen(),
@@ -33,11 +33,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackgroundColor,
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
+      body:_widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color(0xff282828),
+
+        backgroundColor: kSecondaryColor,
         type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
         items: <BottomNavigationBarItem>[

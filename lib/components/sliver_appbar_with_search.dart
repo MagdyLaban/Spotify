@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:spotifynew/utilities/constant.dart';
 
@@ -9,17 +11,21 @@ class SliverAppBarWithSearch extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       flexibleSpace: FlexibleSpaceBar(
-       // titlePadding: EdgeInsets.symmetric(horizontal: 15,vertical: 15),
+
+        titlePadding: EdgeInsets.symmetric(horizontal: 0,vertical: 15.0),
         title: Container(
-          width: double.infinity,
-          height: 35,
+          height: 40,
           child: TextField(
               decoration: InputDecoration(
+                contentPadding: EdgeInsets.all(10.0),
                 filled: true,
                 fillColor: Color(0xffffffff),
-                prefixIcon: Icon(Icons.search,color: Colors.black,),
+                prefixIcon: Icon(Icons.search,color: Colors.grey[600],),
+                hintText: 'Artist,Song or Albums',
                 hintStyle: TextStyle(
-                  color: Colors.grey[600],
+                  color: kBackgroundColor,
+                  fontSize: 14,
+
                 ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(
@@ -35,7 +41,7 @@ class SliverAppBarWithSearch extends StatelessWidget {
             style: style,
         ),
         ),
-        collapseMode: CollapseMode.parallax,
+        collapseMode: CollapseMode.pin,
       ),
       forceElevated: true,
       elevation: 5,
