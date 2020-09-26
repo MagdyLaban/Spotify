@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:spotifynew/components/signup_appbar.dart';
-import 'package:spotifynew/components/signup_form_field.dart';
+import 'package:spotifynew/screens/signup/components/signup_appbar.dart';
+import 'package:spotifynew/screens/signup/components/signup_form_field.dart';
 import 'package:spotifynew/utilities/constant.dart';
 
 class EmailScreen extends StatelessWidget {
