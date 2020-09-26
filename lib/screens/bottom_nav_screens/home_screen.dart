@@ -1,9 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:spotifynew/components/artist_tile.dart';
+import 'package:spotifynew/components/playlist_tile.dart';
 import 'package:spotifynew/screens/settings_screen.dart';
 import 'package:spotifynew/utilities/constant.dart';
 import 'package:spotifynew/components/song_tile.dart';
-
+import 'package:spotifynew/components/label_text.dart';
+import 'package:spotifynew/components/horizontal_list.dart';
+import 'package:spotifynew/components/daily_mix_tile.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -16,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
         backgroundColor: kBackgroundColor,
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           child: CustomScrollView(
             slivers: <Widget>[
               SliverAppBar(
@@ -52,61 +56,73 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                   delegate: SliverChildBuilderDelegate(
                         (BuildContext context, int index) {
-                      return Container(
-                        decoration: BoxDecoration(
-                          color: kSecondaryColor,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Row(
-                          children: <Widget>[
-                            Container(
-                              width: 70,
-                              decoration: BoxDecoration(
-                                color: kSecondaryColor2,
-                                borderRadius: BorderRadius.horizontal(left: Radius.circular(10))
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 15),
-                              child: Text('Daily Mix '+ (index+ 1).toString(),style: kLabelTextStyle.copyWith(fontSize: 13),),
-                            ),
-                          ],
-                        ),
-                      );
+                      return DailyMixTile(index: index);
                     },
                     childCount: 6,
                   ),
+              ),
+              Label(title: 'Suggested artists',),
+              SliverList(
+                delegate: SliverChildBuilderDelegate(
+                      (BuildContext context,int index){
+                    return HorizontalList(item: ArtistTile(),itemCount: 10,height: 120,);
+                  },
+                  childCount: 1,
+                ),
               ),
               Label(title: 'Recently played',),
               SliverList(
                 delegate: SliverChildBuilderDelegate(
                         (BuildContext context,int index){
-                      return SongTile();
+                      return HorizontalList(item: SongTile(),itemCount: 10,height: 120,);
                     },
                     childCount: 1,
                 ),
               ),
+              Label(title: 'Made for you',),
+              SliverList(
+                delegate: SliverChildBuilderDelegate(
+                      (BuildContext context,int index){
+                    return HorizontalList(item: PlaylistTile(),itemCount: 10,height: 140,);
+                  },
+                  childCount: 1,
+                ),
+              ),
+              Label(title:'What fits your mood?'),
+              SliverList(
+                delegate: SliverChildBuilderDelegate(
+                      (BuildContext context,int index){
+                    return HorizontalList(item: PlaylistTile(),itemCount: 10,height: 140,);
+                  },
+                  childCount: 1,
+                ),
+              ),
+              Label(title: 'Popular playlist',),
+              SliverList(
+                delegate: SliverChildBuilderDelegate(
+                      (BuildContext context,int index){
+                    return HorizontalList(item: PlaylistTile(),itemCount: 10,height: 140,);
+                  },
+                  childCount: 1,
+                ),
+              ),
+              Label(title: 'Music to stay up to date',),
+              SliverList(
+                delegate: SliverChildBuilderDelegate(
+                      (BuildContext context,int index){
+                    return HorizontalList(item: SongTile(),itemCount: 10,height: 120,);
+                  },
+                  childCount: 1,
+                ),
+              ),
+              SliverPadding(
+                padding: EdgeInsets.only(bottom: 20),
+              )
             ],
           ),
         ));
   }
 }
 
-class Label extends StatelessWidget {
-  Label({@required this.title});
-  final String title;
-  @override
-  Widget build(BuildContext context) {
-    return SliverList(
-      delegate: SliverChildBuilderDelegate(
-        (BuildContext context,int index){
-          return Padding(
-            padding: const EdgeInsets.only(top: 30,bottom: 10),
-            child: Text(title,style: kLabelTextStyle),
-          );
-        },
-        childCount: 1
-      ),
-    );
-  }
-}
+
+

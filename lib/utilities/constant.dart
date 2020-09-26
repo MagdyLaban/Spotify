@@ -39,3 +39,4 @@ const kSecondaryColor = Color(0xff282828);
 const kSecondaryColor2 = Color(0xff404040);
 const kAppBarTitleTextStile = TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 30);
 const kLabelTextStyle = TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.bold);
+const kTileNameTextStyle = TextStyle(color: Colors.white,fontSize: 13);
