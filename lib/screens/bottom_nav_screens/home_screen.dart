@@ -26,25 +26,38 @@ class _HomeScreenState extends State<HomeScreen> {
               SliverAppBar(
                 backgroundColor: kBackgroundColor,
                 flexibleSpace: FlexibleSpaceBar(
-                  background: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: <Widget>[
-                      IconButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SettingScreen(),));
-                        },
-                        icon: Icon(
-                          Icons.settings,
-                          color: Colors.white,
-                        ),
+                  background: Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          kSecondaryColor2,
+                          kSecondaryColor,
+                          kBackgroundColor
+                        ],
                       ),
-                    ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: <Widget>[
+                        IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SettingScreen(),));
+                          },
+                          icon: Icon(
+                            Icons.settings,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-                expandedHeight: 120,
+                expandedHeight: 100,
               ),
               Label(title: 'Good evening'),
               SliverGrid(

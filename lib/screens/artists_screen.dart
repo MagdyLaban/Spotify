@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:spotifynew/components/sliver_appbar.dart';
+import 'package:spotifynew/components/sliver_appbar_with_search.dart';
 import 'package:spotifynew/components/artists_tiles_sliver_grid.dart';
 import 'package:spotifynew/screens/bottom_nav_screens/bottom_nav_bar_screen.dart';
 import 'package:spotifynew/utilities/constant.dart';
@@ -18,20 +18,18 @@ class _ArtistsScreenState extends State<ArtistsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackgroundColor,
-      body: Padding(
-        padding: const EdgeInsets.only(top: 20),
-        child: CustomScrollView(
-          slivers: <Widget>[
-            SliverAppBarWithSearch(
-              text: 'Choose 3 or more artists you like.',
-              style: kAppBarTitleTextStyle,
-            ),
-            SliverPadding(
-              padding: EdgeInsets.all(5),
-            ),
-            ArtistsTilesSliverGrid(),
-          ],
-        ),
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverAppBarWithSearch(
+            text: 'Choose 3 or more artists you like.',
+            style: kAppBarTitleTextStyle,
+            searchBarStyle: kSearchBarDarkStyle,
+          ),
+          SliverPadding(
+            padding: EdgeInsets.symmetric(vertical: 10),
+          ),
+          ArtistsTilesSliverGrid(),
+        ],
       ),
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(bottom: 10),

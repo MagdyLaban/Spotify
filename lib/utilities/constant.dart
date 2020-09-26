@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 const kPrimaryColor = Color(0xFF1DB954);
-
+const kSecondaryColor = Color(0xff282828);
+const kSecondaryColor2 = Color(0xff404040);
 const kHomeScreenGradient = BoxDecoration(
   gradient: LinearGradient(
     begin: Alignment.bottomCenter,
@@ -20,7 +21,6 @@ BoxDecoration kSignUpFreeDecoration = BoxDecoration(
   borderRadius: BorderRadius.circular(40.0),
   color: kPrimaryColor,
 );
-
 BoxDecoration kSignUpOtherDecoration = BoxDecoration(
   borderRadius: BorderRadius.circular(40.0),
   border: Border.all(
@@ -29,32 +29,39 @@ BoxDecoration kSignUpOtherDecoration = BoxDecoration(
   ),
 );
 
-const kLogInCenterTextStyle = TextStyle(
-  color: Colors.white,
-  fontSize: 40.0,
-  fontWeight: FontWeight.bold,
-);
+const kLogInCenterTextStyle = TextStyle(color: Colors.white,fontSize: 40.0,fontWeight: FontWeight.bold,);
+const kSignUpFormTextStyle = TextStyle(color: Colors.white,fontWeight: FontWeight.w400,);
+const kLogInLabelTextStyle = TextStyle(color: Colors.white,fontWeight: FontWeight.w700,fontSize: 17.0,);
 
-const kSignUpFormTextStyle = TextStyle(
-  color: Colors.white,
-  fontWeight: FontWeight.w400,
-);
-
-const kLogInLabelTextStyle = TextStyle(
-  color: Colors.white,
-  fontWeight: FontWeight.w700,
-  fontSize: 17.0,
-);
-
-const kSearchBarStyle = InputDecoration(
+const kSearchBarDarkStyle = InputDecoration(
+  contentPadding: EdgeInsets.symmetric(horizontal: 5,vertical: 10),
   filled: true,
   fillColor: Color(0xff2A2A2A),
   prefixIcon: Icon(
     Icons.search,
     color: Colors.grey,
   ),
+  hintText: 'Search',
   hintStyle: TextStyle(
     color: Colors.grey,
+    fontSize: 14
+  ),
+  border: OutlineInputBorder(
+    borderRadius: BorderRadius.all(
+      Radius.circular(5.0),
+    ),
+  ),
+);
+
+const kSearchBarStyle = InputDecoration(
+  contentPadding: EdgeInsets.all(10.0),
+  filled: true,
+  fillColor: Colors.white,
+  prefixIcon: Icon(Icons.search,color: kSecondaryColor2,),
+  hintText: 'Artist,Song or Albums',
+  hintStyle: TextStyle(
+    color: kBackgroundColor,
+    fontSize: 14,
   ),
   border: OutlineInputBorder(
     borderRadius: BorderRadius.all(
@@ -64,7 +71,6 @@ const kSearchBarStyle = InputDecoration(
 );
 
 const kBackgroundColor = Color(0xff121212);
-
 const kAppBarTitleTextStyle = TextStyle(
   color: Colors.white,
   fontWeight: FontWeight.bold,
@@ -76,24 +82,6 @@ const kSignUpUserRequiredInputStyle = TextStyle(
   fontWeight: FontWeight.w700,
   fontSize: 35.0,
 );
-
-const kTextFieldConditionTextStyle = TextStyle(
-  color: Colors.white,
-  fontSize: 13.0,
-  fontWeight: FontWeight.w500,
-);
-
-const kSecondaryColor = Color(0xff282828);
-
-const kSecondaryColor2 = Color(0xff404040);
-
-const kLabelTextStyle = TextStyle(
-  fontSize: 25,
-  color: Colors.white,
-  fontWeight: FontWeight.bold,
-);
-
-const kAppBarTitleTextStile =
-    TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 30);
-
+const kTextFieldConditionTextStyle = TextStyle(color: Colors.white,fontSize: 13.0,fontWeight: FontWeight.w500,);
+const kLabelTextStyle = TextStyle(fontSize: 25, color: Colors.white,fontWeight: FontWeight.bold,);
 const kTileNameTextStyle = TextStyle(color: Colors.white, fontSize: 13);

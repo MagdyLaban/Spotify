@@ -1,51 +1,35 @@
 import 'dart:ui';
-
+import 'search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:spotifynew/utilities/constant.dart';
 
 class SliverAppBarWithSearch extends StatelessWidget {
-  SliverAppBarWithSearch({this.text,this.style});
+  SliverAppBarWithSearch({this.text,this.style,@required this.searchBarStyle});
   final String text;
   final TextStyle style;
+  final InputDecoration searchBarStyle;
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
       flexibleSpace: FlexibleSpaceBar(
-
-        titlePadding: EdgeInsets.symmetric(horizontal: 0,vertical: 15.0),
-        title: Container(
-          height: 40,
-          child: TextField(
-              decoration: InputDecoration(
-                contentPadding: EdgeInsets.all(10.0),
-                filled: true,
-                fillColor: Color(0xffffffff),
-                prefixIcon: Icon(Icons.search,color: Colors.grey[600],),
-                hintText: 'Artist,Song or Albums',
-                hintStyle: TextStyle(
-                  color: kBackgroundColor,
-                  fontSize: 14,
-
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(5.0),
-                  ),
-                ),
-              ),
-          ),
+        titlePadding: EdgeInsets.only( bottom:8),
+        title: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: SearchBar(searchBarStyle: searchBarStyle,),
         ),
         background: Center(
-          child: Text(
-            text,
-            style: style,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15,),
+            child: Text(
+              text,
+              style: style,
         ),
+          ),
         ),
-        collapseMode: CollapseMode.pin,
+        collapseMode: CollapseMode.parallax,
       ),
-      forceElevated: true,
-      elevation: 5,
-      backgroundColor: Color(0xff121212),
+      elevation: 8,
+      backgroundColor: kBackgroundColor,
       floating: false,
       pinned: true,
       snap: false,
@@ -53,3 +37,5 @@ class SliverAppBarWithSearch extends StatelessWidget {
     );
   }
 }
+
+

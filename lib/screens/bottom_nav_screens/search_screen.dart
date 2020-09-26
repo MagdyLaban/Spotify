@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spotifynew/components/sliver_appbar.dart';
+import 'package:spotifynew/components/sliver_appbar_with_search.dart';
 import 'package:spotifynew/utilities/constant.dart';
 import 'bottom_nav_bar_screen.dart';
 import 'package:spotifynew/components/category_sliver_grid.dart';
@@ -16,26 +16,23 @@ class _SearchScreenState extends State<SearchScreen> {
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        padding: const EdgeInsets.symmetric(horizontal: 8),
         child: CustomScrollView(
           slivers: [
             SliverAppBarWithSearch(
               text: 'Search',
-              style: TextStyle(
-                fontSize: 50.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+              style: kAppBarTitleTextStyle.copyWith(fontSize: 50),
+              searchBarStyle: kSearchBarStyle,
             ),
             SliverList(
               delegate: SliverChildBuilderDelegate(
                 (BuildContext context, int index) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 10, vertical: 15),
+                        horizontal: 10, vertical: 10),
                     child: Text(
                       'Browse all',
-                      style: kAppBarTitleTextStile.copyWith(fontSize: 25),
+                      style: kAppBarTitleTextStyle.copyWith(fontSize: 25),
                     ),
                   );
                 },

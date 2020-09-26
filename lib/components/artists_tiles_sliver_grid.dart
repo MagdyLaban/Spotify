@@ -8,15 +8,15 @@ class ArtistsTilesSliverGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverGrid(
       gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-        maxCrossAxisExtent: 180,
-        crossAxisSpacing:10,
+        maxCrossAxisExtent: 150,
+        crossAxisSpacing:5,
         mainAxisSpacing: 20,
       ),
       delegate: SliverChildBuilderDelegate(
             (BuildContext context, int index) {
           return ArtistTile();
         },
-        childCount: 30,
+        childCount: 24,
       ),
     );
   }
