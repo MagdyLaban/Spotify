@@ -63,6 +63,27 @@ const kSearchBarStyle = InputDecoration(
   ),
 );
 
+const kSearchBarDarkStyle = InputDecoration(
+  contentPadding: EdgeInsets.symmetric(horizontal: 5,vertical: 10),
+  filled: true,
+  fillColor: Color(0xff2A2A2A),
+  prefixIcon: Icon(
+    Icons.search,
+    color: Colors.grey,
+  ),
+  hintText: 'Search',
+  hintStyle: TextStyle(
+      color: Colors.grey,
+      fontSize: 14
+  ),
+  border: OutlineInputBorder(
+    borderRadius: BorderRadius.all(
+      Radius.circular(5.0),
+    ),
+  ),
+);
+
+
 const kBackgroundColor = Color(0xff121212);
 
 const kAppBarTitleTextStyle = TextStyle(
@@ -97,3 +118,8 @@ const kAppBarTitleTextStile =
     TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 30);
 
 const kTileNameTextStyle = TextStyle(color: Colors.white, fontSize: 13);
+const kNextButtonTextStyle = TextStyle(
+  color: Colors.black,
+  fontWeight: FontWeight.w700,
+  fontSize: 17.0,
+);
