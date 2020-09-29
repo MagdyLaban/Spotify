@@ -64,7 +64,7 @@ const kSearchBarStyle = InputDecoration(
 );
 
 const kSearchBarDarkStyle = InputDecoration(
-  contentPadding: EdgeInsets.symmetric(horizontal: 5,vertical: 10),
+  contentPadding: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
   filled: true,
   fillColor: Color(0xff2A2A2A),
   prefixIcon: Icon(
@@ -72,17 +72,13 @@ const kSearchBarDarkStyle = InputDecoration(
     color: Colors.grey,
   ),
   hintText: 'Search',
-  hintStyle: TextStyle(
-      color: Colors.grey,
-      fontSize: 14
-  ),
+  hintStyle: TextStyle(color: Colors.grey, fontSize: 14),
   border: OutlineInputBorder(
     borderRadius: BorderRadius.all(
       Radius.circular(5.0),
     ),
   ),
 );
-
 
 const kBackgroundColor = Color(0xff121212);
 
@@ -122,4 +118,21 @@ const kNextButtonTextStyle = TextStyle(
   color: Colors.black,
   fontWeight: FontWeight.w700,
   fontSize: 17.0,
+);
+
+BoxDecoration kGenderLabelStyle = BoxDecoration(
+  borderRadius: BorderRadius.circular(
+    40.0,
+  ),
+  color: Colors.black,
+  border: Border.all(
+    color: Colors.grey,
+    width: 2.8,
+  ),
+);
+
+const kGenderTextStyle = TextStyle(
+  color: Colors.white,
+  fontWeight: FontWeight.w700,
+  fontSize: 15.0,
 );

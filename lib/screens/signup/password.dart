@@ -20,6 +20,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
         hint: 'Use at least 8 characters.',
         isNext: false,
         isPassword: true,
+        buttonText: 'NEXT',
         onPress: () {
           Navigator.push(
             context,

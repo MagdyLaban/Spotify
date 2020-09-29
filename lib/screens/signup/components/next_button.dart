@@ -4,8 +4,9 @@ import 'package:spotifynew/utilities/constant.dart';
 class NextButton extends StatelessWidget {
   final bool active;
   final Function onPress;
+  final String text;
 
-  NextButton({this.active, this.onPress});
+  NextButton({this.active, this.onPress, this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class NextButton extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            'NEXT',
+            text,
             style: kNextButtonTextStyle,
           ),
         ),

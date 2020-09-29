@@ -9,6 +9,7 @@ class SignUpBody extends StatefulWidget {
   final String hint;
   final Function onPress;
   final bool isNext;
+  final String buttonText;
 
   const SignUpBody(
       {Key key,
@@ -16,7 +17,8 @@ class SignUpBody extends StatefulWidget {
       this.isPassword,
       this.hint,
       this.onPress,
-      this.isNext})
+      this.isNext,
+      this.buttonText})
       : super(key: key);
 
   @override
@@ -53,6 +55,7 @@ class _SignUpBodyState extends State<SignUpBody> {
           child: NextButton(
             onPress: widget.onPress,
             active: widget.isNext,
+            text: widget.buttonText,
           ),
         ),
       ],
