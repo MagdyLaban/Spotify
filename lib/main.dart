@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:spotifynew/screens/artists_screen.dart';
 import 'package:spotifynew/screens/register_screen.dart';
 import 'package:spotifynew/screens/settings_screen.dart';
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: SplashScreen.id,
+      initialRoute: BottomNavBar.id,
       routes: {
         SplashScreen.id: (context) => SplashScreen(),
         RegisterScreen.id: (context) => RegisterScreen(),

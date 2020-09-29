@@ -22,9 +22,18 @@ class _UserNameScreenState extends State<UserNameScreen> {
         isPassword: false,
         buttonText: 'CREATE',
         onPress: () {
-          Navigator.push(
+          // Navigator.pushReplacement(
+          //   context,
+          //   MaterialPageRoute(builder: (context) => ArtistsScreen()),
+          // );
+
+          // to clear the navigator stack
+          Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => ArtistsScreen()),
+            MaterialPageRoute(
+              builder: (BuildContext context) => ArtistsScreen(),
+            ),
+                (route) => false,
           );
         },
       ),

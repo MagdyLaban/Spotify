@@ -20,10 +20,8 @@ class DailyMixTile extends StatelessWidget {
                 borderRadius: BorderRadius.horizontal(left: Radius.circular(5))
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Text('Daily Mix '+ (index+ 1).toString(),style: kTileNameTextStyle),
-          ),
+          SizedBox(width: 15,),
+          Flexible(child: Text('Daily Mix'+ (index+ 1).toString(),style: kTileNameTextStyle,overflow: TextOverflow.visible)),
         ],
       ),
     );

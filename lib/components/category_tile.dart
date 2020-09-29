@@ -8,7 +8,6 @@ class CategoryTile extends StatelessWidget {
         
       },
       child: Container(
-
         child: Padding(
           padding: const EdgeInsets.only(left: 10.0, top: 10.0),
           child: Text(

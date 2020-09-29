@@ -85,7 +85,7 @@ const kBackgroundColor = Color(0xff121212);
 const kAppBarTitleTextStyle = TextStyle(
   color: Colors.white,
   fontWeight: FontWeight.bold,
-  fontSize: 30,
+  fontSize: 32,
 );
 
 const kSignUpUserRequiredInputStyle = TextStyle(
@@ -110,9 +110,6 @@ const kLabelTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
 );
 
-const kAppBarTitleTextStile =
-    TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 30);
-
 const kTileNameTextStyle = TextStyle(color: Colors.white, fontSize: 13);
 const kNextButtonTextStyle = TextStyle(
   color: Colors.black,
@@ -136,3 +133,5 @@ const kGenderTextStyle = TextStyle(
   fontWeight: FontWeight.w700,
   fontSize: 15.0,
 );
+
+const kPremiumLabelTextStyle = TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 22);

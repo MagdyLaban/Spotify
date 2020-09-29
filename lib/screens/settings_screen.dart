@@ -53,12 +53,12 @@ class _SettingScreenState extends State<SettingScreen> {
                 padding: EdgeInsets.only(top: 32),
               ),
               Text(
-                'Free Acoount',
+                'Free Account',
                 style: kLogInLabelTextStyle,
                 textAlign: TextAlign.center,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 57, vertical: 23),
+                padding: EdgeInsets.symmetric(horizontal: 60, vertical: 20),
                 child: RoundedActionButton(
                   title: 'GO PREMIUM',
                   onPressed: () {

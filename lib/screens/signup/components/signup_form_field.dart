@@ -34,14 +34,14 @@ class _SignUpFormState extends State<SignUpForm> {
               : null,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5.0),
-            borderSide: BorderSide(color: Colors.grey.shade700),
+            borderSide: BorderSide(color: kSecondaryColor2),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey.shade700),
+            borderSide: BorderSide(color: kSecondaryColor2),
             borderRadius: BorderRadius.circular(5.0),
           ),
           filled: true,
-          fillColor: Colors.grey.shade700,
+          fillColor: kSecondaryColor2,
         ),
         autofocus: true,
       ),
