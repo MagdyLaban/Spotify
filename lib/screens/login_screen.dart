@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotifynew/screens/bottom_nav_screens/bottom_nav_bar_screen.dart';
 import 'package:spotifynew/screens/bottom_nav_screens/home_screen.dart';
 import 'package:spotifynew/screens/register_screen.dart';
 import 'package:spotifynew/screens/signup/components/next_button.dart';
@@ -64,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Center(
               child: NextButton(
                 onPress: () {
-                  Navigator.pushNamed(context, HomeScreen.id);
+                  Navigator.pushNamed(context, BottomNavBar.id);
                 },
                 text: 'LOG IN',
                 active: false,
@@ -76,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Center(
               child: GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, HomeScreen.id);
+                  Navigator.pushNamed(context, BottomNavBar.id);
                 },
                 child: Container(
                   decoration: BoxDecoration(

@@ -23,7 +23,6 @@ class MyApp extends StatelessWidget {
         SplashScreen.id: (context) => SplashScreen(),
         RegisterScreen.id: (context) => RegisterScreen(),
         LoginScreen.id: (context) => LoginScreen(),
-        HomeScreen.id: (context) => HomeScreen(),
         ArtistsScreen.id: (context) => ArtistsScreen(),
         BottomNavBar.id: (context) => BottomNavBar(),
         SettingScreen.id: (context) => SettingScreen(),
