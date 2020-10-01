@@ -10,6 +10,7 @@ import 'package:spotifynew/components/horizontal_list.dart';
 import 'package:spotifynew/components/daily_mix_tile.dart';
 
 class HomeScreen extends StatefulWidget {
+  static const String id = 'home screen';
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -46,7 +47,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => SettingScreen(),));
+                                  builder: (context) => SettingScreen(),
+                                ));
                           },
                           icon: Icon(
                             Icons.settings,
@@ -61,69 +63,102 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Label(title: 'Good evening'),
               SliverGrid(
-                gridDelegate:SliverGridDelegateWithMaxCrossAxisExtent(
+                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: 200,
-                    crossAxisSpacing:10,
+                    crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
-                    childAspectRatio: 2.8
+                    childAspectRatio: 2.8),
+                delegate: SliverChildBuilderDelegate(
+                  (BuildContext context, int index) {
+                    return DailyMixTile(index: index);
+                  },
+                  childCount: 6,
                 ),
-                  delegate: SliverChildBuilderDelegate(
-                        (BuildContext context, int index) {
-                      return DailyMixTile(index: index);
-                    },
-                    childCount: 6,
-                  ),
               ),
-              Label(title: 'Suggested artists',),
+              Label(
+                title: 'Suggested artists',
+              ),
               SliverList(
                 delegate: SliverChildBuilderDelegate(
-                      (BuildContext context,int index){
-                    return HorizontalList(item: ArtistTile(),itemCount: 10,height: 120,);
+                  (BuildContext context, int index) {
+                    return HorizontalList(
+                      item: ArtistTile(),
+                      itemCount: 10,
+                      height: 120,
+                    );
                   },
                   childCount: 1,
                 ),
               ),
-              Label(title: 'Recently played',),
-              SliverList(
-                delegate: SliverChildBuilderDelegate(
-                        (BuildContext context,int index){
-                      return HorizontalList(item: SongTile(),itemCount: 10,height: 120,);
-                    },
-                    childCount: 1,
-                ),
+              Label(
+                title: 'Recently played',
               ),
-              Label(title: 'Made for you',),
               SliverList(
                 delegate: SliverChildBuilderDelegate(
-                      (BuildContext context,int index){
-                    return HorizontalList(item: PlaylistTile(),itemCount: 10,height: 140,);
+                  (BuildContext context, int index) {
+                    return HorizontalList(
+                      item: SongTile(),
+                      itemCount: 10,
+                      height: 120,
+                    );
                   },
                   childCount: 1,
                 ),
               ),
-              Label(title:'What fits your mood?'),
+              Label(
+                title: 'Made for you',
+              ),
               SliverList(
                 delegate: SliverChildBuilderDelegate(
-                      (BuildContext context,int index){
-                    return HorizontalList(item: PlaylistTile(),itemCount: 10,height: 140,);
+                  (BuildContext context, int index) {
+                    return HorizontalList(
+                      item: PlaylistTile(),
+                      itemCount: 10,
+                      height: 140,
+                    );
                   },
                   childCount: 1,
                 ),
               ),
-              Label(title: 'Popular playlist',),
+              Label(title: 'What fits your mood?'),
               SliverList(
                 delegate: SliverChildBuilderDelegate(
-                      (BuildContext context,int index){
-                    return HorizontalList(item: PlaylistTile(),itemCount: 10,height: 140,);
+                  (BuildContext context, int index) {
+                    return HorizontalList(
+                      item: PlaylistTile(),
+                      itemCount: 10,
+                      height: 140,
+                    );
                   },
                   childCount: 1,
                 ),
               ),
-              Label(title: 'Music to stay up to date',),
+              Label(
+                title: 'Popular playlist',
+              ),
               SliverList(
                 delegate: SliverChildBuilderDelegate(
-                      (BuildContext context,int index){
-                    return HorizontalList(item: SongTile(),itemCount: 10,height: 120,);
+                  (BuildContext context, int index) {
+                    return HorizontalList(
+                      item: PlaylistTile(),
+                      itemCount: 10,
+                      height: 140,
+                    );
+                  },
+                  childCount: 1,
+                ),
+              ),
+              Label(
+                title: 'Music to stay up to date',
+              ),
+              SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  (BuildContext context, int index) {
+                    return HorizontalList(
+                      item: SongTile(),
+                      itemCount: 10,
+                      height: 120,
+                    );
                   },
                   childCount: 1,
                 ),
@@ -136,6 +171,3 @@ class _HomeScreenState extends State<HomeScreen> {
         ));
   }
 }
-
-
-

@@ -91,7 +91,7 @@ const kAppBarTitleTextStyle = TextStyle(
 const kSignUpUserRequiredInputStyle = TextStyle(
   color: Colors.white,
   fontWeight: FontWeight.w700,
-  fontSize: 35.0,
+  fontSize: 28.0,
 );
 
 const kTextFieldConditionTextStyle = TextStyle(
@@ -134,20 +134,18 @@ const kGenderTextStyle = TextStyle(
   fontSize: 15.0,
 );
 
-const kPremiumLabelTextStyle = TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20);
+const kPremiumLabelTextStyle =
+    TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20);
 
 const kGreenGradient = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
-    colors: [Color(0xff045645), Color(0xff0FA467)]
-);
+    colors: [Color(0xff045645), Color(0xff0FA467)]);
 const kBlueGradient = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
-    colors: [Color(0xff5991C2), Color(0xff403F77)]
-);
+    colors: [Color(0xff5991C2), Color(0xff403F77)]);
 const kPurpleGradient = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
-    colors: [Color(0xff213263), Color(0xffAC2995)]
-);
+    colors: [Color(0xff213263), Color(0xffAC2995)]);

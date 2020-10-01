@@ -22,6 +22,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
         isPassword: true,
         buttonText: 'NEXT',
         onPress: () {
+          FocusScope.of(context).unfocus();
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => BirthScreen()),

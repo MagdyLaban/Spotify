@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotifynew/screens/login_screen.dart';
 import 'package:spotifynew/screens/signup/components/rounded_button.dart';
 import 'package:spotifynew/screens/signup/email.dart';
 import 'package:spotifynew/utilities/constant.dart';
@@ -70,7 +71,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                 ),
                 FlatButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, LoginScreen.id);
+                  },
                   child: Text(
                     'Log in',
                     style: kLogInLabelTextStyle,
