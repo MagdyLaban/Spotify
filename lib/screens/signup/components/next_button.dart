@@ -10,20 +10,22 @@ class NextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onPress,
-      child: Container(
-        margin: EdgeInsets.all(30.0),
-        width: 125.0,
-        height: 48.0,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50.0),
-          color: active ? Colors.white : Colors.grey.shade700,
-        ),
-        child: Center(
-          child: Text(
-            text,
-            style: kNextButtonTextStyle,
+    return Center(
+      child: GestureDetector(
+        onTap: onPress,
+        child: Container(
+          margin: EdgeInsets.all(30.0),
+          width: 125.0,
+          height: 48.0,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(50.0),
+            color: active ? Colors.white : Colors.grey.shade700,
+          ),
+          child: Center(
+            child: Text(
+              text,
+              style: kNextButtonTextStyle,
+            ),
           ),
         ),
       ),

@@ -1,25 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:spotifynew/screens/signup/components/next_button.dart';
-import 'package:spotifynew/screens/signup/components/signup_form_field.dart';
 import 'package:spotifynew/utilities/constant.dart';
 
 class SignUpBody extends StatefulWidget {
   final String signUpQuestion;
-  final bool isPassword;
+  final Widget customWidget;
   final String hint;
-  final Function onPress;
-  final bool isNext;
-  final String buttonText;
 
-  const SignUpBody(
-      {Key key,
-      this.signUpQuestion,
-      this.isPassword,
-      this.hint,
-      this.onPress,
-      this.isNext,
-      this.buttonText})
-      : super(key: key);
+  SignUpBody({
+    this.signUpQuestion,
+    this.hint,
+    this.customWidget,
+  });
 
   @override
   _SignUpBodyState createState() => _SignUpBodyState();
@@ -41,21 +32,12 @@ class _SignUpBodyState extends State<SignUpBody> {
             style: kSignUpUserRequiredInputStyle,
           ),
         ),
-        SignUpForm(
-          isPasswordScreen: widget.isPassword,
-        ),
+        widget.customWidget,
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 10.0),
           child: Text(
             widget.hint,
             style: kTextFieldConditionTextStyle,
-          ),
-        ),
-        Center(
-          child: NextButton(
-            onPress: widget.onPress,
-            active: widget.isNext,
-            text: widget.buttonText,
           ),
         ),
       ],

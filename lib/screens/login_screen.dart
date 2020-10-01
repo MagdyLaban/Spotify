@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:spotifynew/screens/bottom_nav_screens/bottom_nav_bar_screen.dart';
-import 'package:spotifynew/screens/bottom_nav_screens/home_screen.dart';
 import 'package:spotifynew/screens/register_screen.dart';
 import 'package:spotifynew/screens/signup/components/next_button.dart';
 import 'package:spotifynew/screens/signup/components/signup_form_field.dart';
-import 'package:spotifynew/utilities/constant.dart';
+import 'package:spotifynew/screens/signup/components/signup_screenBody.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String id = 'login screen';
@@ -36,31 +35,25 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8.0),
-              child: Text(
-                'Email or username',
-                style: kSignUpUserRequiredInputStyle,
+            SignUpBody(
+              signUpQuestion: 'Email or username',
+              hint: '',
+              customWidget: SignUpForm(
+                isPasswordScreen: false,
               ),
             ),
-            SignUpForm(
-              isPasswordScreen: false,
-            ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.04,
+              height: MediaQuery.of(context).size.height * 0.003,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8.0),
-              child: Text(
-                'Password',
-                style: kSignUpUserRequiredInputStyle,
+            SignUpBody(
+              signUpQuestion: 'Password',
+              hint: '',
+              customWidget: SignUpForm(
+                isPasswordScreen: false,
               ),
             ),
-            SignUpForm(
-              isPasswordScreen: true,
-            ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.007,
+              height: MediaQuery.of(context).size.height * 0.003,
             ),
             Center(
               child: NextButton(
