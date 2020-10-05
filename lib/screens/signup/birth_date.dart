@@ -4,7 +4,6 @@ import 'package:spotifynew/screens/signup/components/next_button.dart';
 import 'package:spotifynew/screens/signup/components/signup_appbar.dart';
 import 'package:spotifynew/screens/signup/components/signup_screenBody.dart';
 import 'package:spotifynew/screens/signup/gender.dart';
-import 'package:spotifynew/utilities/constant.dart';
 
 class BirthScreen extends StatefulWidget {
   static const String id = 'birth screen';

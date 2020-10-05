@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:spotifynew/screens/login_screen.dart';
+import 'file:///C:/Users/Mlaba/Desktop/FlutterLearning/spotifynew/lib/login/login_screen.dart';
+import 'file:///C:/Users/Mlaba/Desktop/FlutterLearning/spotifynew/lib/login/login_with_mobile.dart';
 import 'package:spotifynew/screens/signup/components/rounded_button.dart';
 import 'package:spotifynew/screens/signup/email.dart';
 import 'package:spotifynew/utilities/constant.dart';
@@ -55,6 +56,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   },
                 ),
                 RoundButton(
+                  onPress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => LoginWithMobileScreen()));
+                  },
                   isOnlyText: false,
                   text: 'Continue with phone number',
                   labelIcon: Icon(
