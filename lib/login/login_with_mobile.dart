@@ -4,6 +4,7 @@ import 'package:spotifynew/screens/bottom_nav_screens/bottom_nav_bar_screen.dart
 import 'package:spotifynew/screens/register_screen.dart';
 import 'package:spotifynew/screens/signup/components/next_button.dart';
 import 'package:spotifynew/screens/signup/components/signup_screenBody.dart';
+import 'package:spotifynew/screens/artists_screen.dart';
 
 class LoginWithMobileScreen extends StatefulWidget {
   @override
@@ -17,14 +18,6 @@ class _LoginWithMobileScreenState extends State<LoginWithMobileScreen> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pushNamed(context, RegisterScreen.id);
-            },
-            icon: Icon(
-              Icons.arrow_back,
-              color: Colors.white,
-            )),
         elevation: 0.0,
       ),
       body: Column(
@@ -38,9 +31,12 @@ class _LoginWithMobileScreenState extends State<LoginWithMobileScreen> {
             active: true,
             text: 'NEXT',
             onPress: () {
-              Navigator.push(
+              Navigator.pushAndRemoveUntil(
                 context,
-                MaterialPageRoute(builder: (context) => BottomNavBar()),
+                MaterialPageRoute(
+                  builder: (BuildContext context) => ArtistsScreen(),
+                ),
+                    (route) => false,
               );
             },
           ),

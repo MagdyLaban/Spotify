@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/Mlaba/Desktop/FlutterLearning/spotifynew/lib/login/login_screen.dart';
-import 'file:///C:/Users/Mlaba/Desktop/FlutterLearning/spotifynew/lib/login/login_with_mobile.dart';
+import 'package:spotifynew/login/login_screen.dart';
+import 'package:spotifynew/login/login_with_mobile.dart';
 import 'package:spotifynew/screens/signup/components/rounded_button.dart';
 import 'package:spotifynew/screens/signup/email.dart';
 import 'package:spotifynew/utilities/constant.dart';

@@ -11,7 +11,7 @@ class RoundedActionButton extends StatelessWidget {
       onPressed: onPressed,
       fillColor: Colors.white,
       child:Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50,vertical: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 15),
             child: Text(title,style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 18,letterSpacing: 1.2),),
           ),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),

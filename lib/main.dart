@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:spotifynew/screens/artists_screen.dart';
-import 'package:spotifynew/screens/bottom_nav_screens/home_screen.dart';
-import 'file:///C:/Users/Mlaba/Desktop/FlutterLearning/spotifynew/lib/login/login_screen.dart';
+import 'package:spotifynew/login/login_screen.dart';
+import 'package:spotifynew/screens/playlist_screen.dart';
 import 'package:spotifynew/screens/register_screen.dart';
 import 'package:spotifynew/screens/settings_screen.dart';
 import 'screens/bottom_nav_screens/bottom_nav_bar_screen.dart';
 import 'screens/register_screen.dart';
 import 'screens/splash_screen.dart';
+import 'screens/playlist_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: SplashScreen.id,
+      initialRoute: PlaylistScreen.id,
       routes: {
         SplashScreen.id: (context) => SplashScreen(),
         RegisterScreen.id: (context) => RegisterScreen(),
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         ArtistsScreen.id: (context) => ArtistsScreen(),
         BottomNavBar.id: (context) => BottomNavBar(),
         SettingScreen.id: (context) => SettingScreen(),
+        PlaylistScreen.id: (context) => PlaylistScreen(),
       },
     );
   }
