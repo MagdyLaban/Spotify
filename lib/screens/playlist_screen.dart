@@ -36,10 +36,6 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                 expandedHeight: MediaQuery.of(context).size.height/3,
                 centerTitle: true,
                 backgroundColor: kSecondaryColor,
-                leading: IconButton(
-                  icon: Icon(Icons.arrow_back,color: Colors.white,),
-
-                ),
                 actions: <Widget>[
                   IconButton(
                     icon: Icon(Icons.favorite_border,color: Colors.white,),

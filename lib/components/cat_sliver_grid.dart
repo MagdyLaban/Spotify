@@ -3,6 +3,7 @@ import 'package:spotifynew/utilities/constant.dart';
 import 'package:spotifynew/components/artist_tile.dart';
 import 'package:flutter/material.dart';
 import 'category_tile.dart';
+import 'package:spotifynew/screens/playlist_screen.dart';
 
 class CategorySliverGrid extends StatelessWidget {
 
@@ -21,11 +22,19 @@ class CategorySliverGrid extends StatelessWidget {
             padding: const EdgeInsets.symmetric( horizontal: 5.0),
             child: Column(
               children: [
-                Container(
-                  width: 170,
-                  height: 170,
-                  color: kSecondaryColor2,
-                  child: Icon(Icons.music_note,color: Colors.white,size: 80,),
+                InkWell(
+                  onTap: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PlaylistScreen(),));
+                  },
+                  child: Container(
+                    width: 170,
+                    height: 170,
+                    color: kSecondaryColor2,
+                    child: Icon(Icons.music_note,color: Colors.white,size: 80,),
+                  ),
                 ),
                 SizedBox(height: 5),
                 Text('playlist name',style: TextStyle(fontSize: 15,color: Colors.white,fontWeight: FontWeight.bold),),

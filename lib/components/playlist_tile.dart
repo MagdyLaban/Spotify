@@ -9,7 +9,7 @@ class PlaylistTile extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.only( right: 5,bottom: 5),
+          padding: const EdgeInsets.only( right: 10,bottom: 5),
           child: InkWell(
             onTap: (){
     Navigator.push(

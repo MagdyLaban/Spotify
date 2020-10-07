@@ -15,7 +15,7 @@ class NormalSliverAppBar extends StatelessWidget {
         StretchMode.fadeTitle,
         StretchMode.blurBackground,
       ],
-        titlePadding: EdgeInsets.all(0.5  ),
+        titlePadding: EdgeInsets.only(bottom:10),
         centerTitle: true,
         title: Text('category',
         style: kAppBarTitleTextStyle),
