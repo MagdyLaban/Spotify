@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:spotifynew/screens/bottom_nav_screens/bottom_nav_bar_screen.dart';
 import 'package:spotifynew/screens/bottom_nav_screens/premium_screen.dart';

@@ -12,14 +12,16 @@ class SliverAppBarWithSearch extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       flexibleSpace: FlexibleSpaceBar(
-        titlePadding: EdgeInsets.only( bottom:8),
+        titlePadding: EdgeInsets.only( bottom:1),
         title: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: SearchBar(searchBarStyle: searchBarStyle,),
+          padding: EdgeInsets.symmetric(horizontal:1,vertical: 8),
+          child: SearchBar(
+            searchBarStyle: searchBarStyle,
+          ),
         ),
         background: Center(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15,),
+            padding: EdgeInsets.symmetric(horizontal: 15,),
             child: Text(
               text,
               style: style,

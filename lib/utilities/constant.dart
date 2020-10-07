@@ -46,15 +46,16 @@ const kLogInLabelTextStyle = TextStyle(
   fontSize: 17.0,
 );
 
-const kSearchBarStyle = InputDecoration(
+const kLightSearchBarStyle = InputDecoration(
+  contentPadding: EdgeInsets.all(10.0),
   filled: true,
-  fillColor: Color(0xff2A2A2A),
-  prefixIcon: Icon(
-    Icons.search,
-    color: Colors.grey,
-  ),
+  fillColor: Color(0xffffffff),
+  prefixIcon: Icon(Icons.search,color: kSecondaryColor),
+  hintText: 'Artist,Song or Albums',
   hintStyle: TextStyle(
-    color: Colors.grey,
+    color: kBackgroundColor,
+    fontSize: 14,
+
   ),
   border: OutlineInputBorder(
     borderRadius: BorderRadius.all(

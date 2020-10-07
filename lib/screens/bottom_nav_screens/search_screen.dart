@@ -22,7 +22,7 @@ class _SearchScreenState extends State<SearchScreen> {
             SliverAppBarWithSearch(
               text: 'Search',
               style: kAppBarTitleTextStyle.copyWith(fontSize: 50),
-              searchBarStyle: kSearchBarStyle,
+              searchBarStyle: kLightSearchBarStyle,
             ),
             SliverList(
               delegate: SliverChildBuilderDelegate(

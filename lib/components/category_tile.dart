@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:spotifynew/screens/category_screen.dart';
 
 class CategoryTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => CategoryScreen(),));
       },
       child: Container(
         child: Padding(
