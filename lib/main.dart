@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spotifynew/screens/artists_screen.dart';
-import 'package:spotifynew/login/login_screen.dart';
 import 'package:spotifynew/screens/category_screen.dart';
+import 'package:spotifynew/screens/login/login_screen.dart';
 import 'package:spotifynew/screens/playlist_screen.dart';
 import 'package:spotifynew/screens/register_screen.dart';
 import 'package:spotifynew/screens/settings_screen.dart';

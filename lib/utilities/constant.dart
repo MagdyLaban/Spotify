@@ -50,12 +50,11 @@ const kLightSearchBarStyle = InputDecoration(
   contentPadding: EdgeInsets.all(10.0),
   filled: true,
   fillColor: Color(0xffffffff),
-  prefixIcon: Icon(Icons.search,color: kSecondaryColor),
+  prefixIcon: Icon(Icons.search, color: kSecondaryColor),
   hintText: 'Artist,Song or Albums',
   hintStyle: TextStyle(
     color: kBackgroundColor,
     fontSize: 14,
-
   ),
   border: OutlineInputBorder(
     borderRadius: BorderRadius.all(
@@ -74,6 +73,7 @@ const kSearchBarDarkStyle = InputDecoration(
   ),
   hintText: 'Search',
   hintStyle: TextStyle(color: Colors.grey, fontSize: 14),
+  focusedBorder: OutlineInputBorder(borderSide: BorderSide.none),
   border: OutlineInputBorder(
     borderRadius: BorderRadius.all(
       Radius.circular(5.0),

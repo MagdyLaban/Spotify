@@ -6,7 +6,7 @@ import 'package:spotifynew/screens/signup/components/signup_form_field.dart';
 import 'package:spotifynew/screens/signup/components/signup_screenBody.dart';
 
 class LoginScreen extends StatefulWidget {
-  static const String id = 'login screen';
+  static const String id = 'screens.login screen';
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
