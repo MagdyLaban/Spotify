@@ -12,22 +12,22 @@ class SettingScreen extends StatefulWidget {
 }
 
 class _SettingScreenState extends State<SettingScreen> {
-  bool val_of_switch1 = false;
-  bool val_of_switch2 = false;
-  bool val_of_switch3 = false;
-  bool val_of_switch4 = false;
-  bool val_of_switch5 = false;
-  bool val_of_switch6 = false;
-  bool val_of_switch7 = false;
-  bool val_of_switch8 = false;
-  bool val_of_switch9 = false;
-  bool val_of_switch10 = false;
-  bool val_of_switch11 = false;
-  bool val_of_switch12 = false;
-  bool val_of_switch13 = false;
+  bool switch1Val = false;
+  bool switch2Val = false;
+  bool switch3Val = false;
+  bool switch4Val = false;
+  bool switch5Val = false;
+  bool switch6Val = false;
+  bool switch7Val = false;
+  bool switch8Val = false;
+  bool switch9Val = false;
+  bool switch10Val = false;
+  bool switch11Val = false;
+  bool switch12Val = false;
+  bool switch13Val = false;
 
   int seconds = 0;
-  String dropmenu = 'Only in a car';
+  String dropMenu = 'Only in a car';
 
   @override
   Widget build(BuildContext context) {
@@ -67,15 +67,15 @@ class _SettingScreenState extends State<SettingScreen> {
                   },
                 ),
               ),
-              Profile_Button(),
+              ProfileButton(),
               Mood(text: 'Data Saver'),
-              SettingItem_Switch(
+              SettingItemSwitch(
                 title: 'On',
                 item: 'Sets your music quality to low and disables canvas',
-                switchval: val_of_switch1,
-                change_switchval: (bool val) {
+                switchVal: switch1Val,
+                changeSwitchVal: (bool val) {
                   setState(() {
-                    val_of_switch1 = val;
+                    switch1Val = val;
                   });
                 },
               ),
@@ -110,9 +110,9 @@ class _SettingScreenState extends State<SettingScreen> {
                         ),
                         child: Slider(
                           value: seconds.toDouble(),
-                          onChanged: (double newval) {
+                          onChanged: (double newVal) {
                             setState(() {
-                              seconds = newval.round();
+                              seconds = newVal.round();
                             });
                           },
                           min: 0,
@@ -127,75 +127,75 @@ class _SettingScreenState extends State<SettingScreen> {
                   ],
                 ),
               ),
-              SettingItem_Switch(
+              SettingItemSwitch(
                 title: 'Gapless',
                 item: 'Allows gapless playback',
-                switchval: val_of_switch2,
-                change_switchval: (bool newval) {
+                switchVal: switch2Val,
+                changeSwitchVal: (bool newVal) {
                   setState(() {
-                    val_of_switch2 = newval;
+                    switch2Val = newVal;
                   });
                 },
               ),
-              SettingItem_Switch(
+              SettingItemSwitch(
                 title: 'Automix',
                 item: 'Allow smooth transitions between songs in a playlist .',
-                switchval: val_of_switch3,
-                change_switchval: (bool newval) {
+                switchVal: switch3Val,
+                changeSwitchVal: (bool newVal) {
                   setState(() {
-                    val_of_switch3 = newval;
+                    switch3Val = newVal;
                   });
                 },
               ),
-              SettingItem_Switch(
+              SettingItemSwitch(
                 title: 'Allow Explict Content',
                 item: 'Turn on to play explict content ',
-                switchval: val_of_switch4,
-                change_switchval: (bool newval) {
+                switchVal: switch4Val,
+                changeSwitchVal: (bool newVal) {
                   setState(() {
-                    val_of_switch4 = newval;
+                    switch4Val = newVal;
                   });
                 },
               ),
-              SettingItem_Switch(
+              SettingItemSwitch(
                 title: 'Show unplayable songs',
                 item: 'Show songs that are unplayable .',
-                switchval: val_of_switch5,
-                change_switchval: (bool newval) {
+                switchVal: switch5Val,
+                changeSwitchVal: (bool newVal) {
                   setState(() {
-                    val_of_switch5 = newval;
+                    switch5Val = newVal;
                   });
                 },
               ),
-              SettingItem_Switch(
+              SettingItemSwitch(
                 title: 'Normalize Volume',
                 item: 'Set tje same volume level for all tracks ',
-                switchval: val_of_switch6,
-                change_switchval: (bool newval) {
+                switchVal: switch6Val,
+                changeSwitchVal: (bool newval) {
                   setState(() {
-                    val_of_switch6 = newval;
+                    switch6Val = newval;
                   });
                 },
               ),
-              SettingItem_Switch(
+              SettingItemSwitch(
                 title: 'Device Broadcast Status',
                 item:
                     'Allow other apps on your device to see what you are listening to.',
-                switchval: val_of_switch7,
-                change_switchval: (bool newval) {
+                switchVal: switch7Val,
+                changeSwitchVal: (bool newVal) {
                   setState(() {
-                    val_of_switch7 = newval;
+                    switch7Val = newVal;
                   });
                 },
               ),
-              SettingItem_Switch(
+              SettingItemSwitch(
                 title: 'Autoplay',
                 item:
                     'Keep on listening to similar tracks when your music ends .',
-                switchval: val_of_switch8,
-                change_switchval: (bool newval) {
+                switchVal: switch8Val,
+                changeSwitchVal: (bool newVal) {
                   setState(() {
-                    val_of_switch8 = newval;
+                    switch8Val = newVal;
                   });
                 },
               ),
@@ -203,25 +203,25 @@ class _SettingScreenState extends State<SettingScreen> {
               SettingItem(
                   title: 'Connect to a device',
                   subtitle: 'Listen and Control Spotify on your devices'),
-              SettingItem_Switch(
+              SettingItemSwitch(
                 title: 'Show local device only',
                 item:
                     'Only show devices on your WiFi or ethernet in the devices menu .',
-                switchval: val_of_switch9,
-                change_switchval: (bool newval) {
+                switchVal: switch9Val,
+                changeSwitchVal: (bool newVal) {
                   setState(() {
-                    val_of_switch9 = newval;
+                    switch9Val = newVal;
                   });
                 },
               ),
-              SettingItem_Switch(
+              SettingItemSwitch(
                 title: 'Spotify Connect in background',
                 item:
                     'Allow Spotify Connect to keep Spotify running when the app in background',
-                switchval: val_of_switch10,
-                change_switchval: (bool newval) {
+                switchVal: switch10Val,
+                changeSwitchVal: (bool newVal) {
                   setState(() {
-                    val_of_switch10 = newval;
+                    switch10Val = newVal;
                   });
                 },
               ),
@@ -241,7 +241,7 @@ class _SettingScreenState extends State<SettingScreen> {
                   flex: 1,
                   child: DropdownButton(
                     isExpanded: true,
-                    value: dropmenu,
+                    value: dropMenu,
                     style: kSignUpFormTextStyle,
                     dropdownColor: Color(0xff282828),
                     itemHeight: 50,
@@ -250,9 +250,9 @@ class _SettingScreenState extends State<SettingScreen> {
                       height: 1,
                       color: Colors.grey.withOpacity(.4),
                     ),
-                    onChanged: (String newval) {
+                    onChanged: (String newVal) {
                       setState(() {
-                        dropmenu = newval;
+                        dropMenu = newVal;
                       });
                     },
                     items: <String>['Only in a car', 'Never']
@@ -265,35 +265,35 @@ class _SettingScreenState extends State<SettingScreen> {
                   ),
                 ),
               ]),
-              SettingItem_Switch(
+              SettingItemSwitch(
                 title: 'Keep app open on screen',
                 item:
-                    'Turn this on and the app will stay up on ypur screen while you are in car mode',
-                switchval: val_of_switch11,
-                change_switchval: (bool newval) {
+                    'Turn this on and the app will stay up on your screen while you are in car mode',
+                switchVal: switch11Val,
+                changeSwitchVal: (bool newVal) {
                   setState(() {
-                    val_of_switch11 = newval;
+                    switch11Val = newVal;
                   });
                 },
               ),
               Mood(text: 'Social'),
-              SettingItem_Switch(
+              SettingItemSwitch(
                 title: 'Private session',
                 item: 'Start a private session to listen anonymously',
-                switchval: val_of_switch12,
-                change_switchval: (bool newval) {
+                switchVal: switch12Val,
+                changeSwitchVal: (bool newVal) {
                   setState(() {
-                    val_of_switch12 = newval;
+                    switch12Val = newVal;
                   });
                 },
               ),
-              SettingItem_Switch(
+              SettingItemSwitch(
                 title: 'Listening activity',
                 item: 'Share what i listen to with my followers on Spotify .',
-                switchval: val_of_switch13,
-                change_switchval: (bool newval) {
+                switchVal: switch13Val,
+                changeSwitchVal: (bool newVal) {
                   setState(() {
-                    val_of_switch13 = newval;
+                    switch13Val = newVal;
                   });
                 },
               ),
@@ -395,7 +395,7 @@ class StorageTrack extends StatelessWidget {
   }
 }
 
-class Profile_Button extends StatelessWidget {
+class ProfileButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -438,19 +438,19 @@ class Profile_Button extends StatelessWidget {
   }
 }
 
-class SettingItem_Switch extends StatelessWidget {
+class SettingItemSwitch extends StatelessWidget {
 
-  SettingItem_Switch(
+  SettingItemSwitch(
       {@required this.title,
       @required this.item,
-      this.switchval,
-      this.change_switchval
+      this.switchVal,
+      this.changeSwitchVal
       });
 
   final String title;
   final String item;
-  final Function change_switchval;
-  final bool switchval;
+  final Function changeSwitchVal;
+  final bool switchVal;
 
   @override
   Widget build(BuildContext context) {
@@ -466,11 +466,11 @@ class SettingItem_Switch extends StatelessWidget {
           style: kSubtitleStyle,
         ),
         activeColor: Colors.green,
-        value: switchval,
+        value: switchVal,
         activeTrackColor: Colors.green.withOpacity(.3),
         inactiveThumbColor: Colors.white,
         inactiveTrackColor: Colors.grey,
-        onChanged: change_switchval,
+        onChanged: changeSwitchVal,
       ),
     );
   }
