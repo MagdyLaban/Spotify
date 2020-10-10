@@ -86,13 +86,13 @@ const kBackgroundColor = Color(0xff121212);
 const kAppBarTitleTextStyle = TextStyle(
   color: Colors.white,
   fontWeight: FontWeight.bold,
-  fontSize: 32,
+  fontSize: 28,
 );
 
 const kSignUpUserRequiredInputStyle = TextStyle(
   color: Colors.white,
   fontWeight: FontWeight.w700,
-  fontSize: 28.0,
+  fontSize: 25.0,
 );
 
 const kTextFieldConditionTextStyle = TextStyle(
@@ -150,3 +150,6 @@ const kPurpleGradient = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
     colors: [Color(0xff213263), Color(0xffAC2995)]);
+
+const kUnLikedIcon = Icon(Icons.favorite_border,color: Colors.white,);
+const kLikedIcon = Icon(Icons.favorite,color: kPrimaryColor,);

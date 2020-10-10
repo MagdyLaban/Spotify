@@ -91,21 +91,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               Label(
-                title: 'Recently played',
-              ),
-              SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  (BuildContext context, int index) {
-                    return HorizontalList(
-                      item: SongTile(),
-                      itemCount: 10,
-                      height: 120,
-                    );
-                  },
-                  childCount: 1,
-                ),
-              ),
-              Label(
                 title: 'Made for you',
               ),
               SliverList(
@@ -155,9 +140,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 delegate: SliverChildBuilderDelegate(
                   (BuildContext context, int index) {
                     return HorizontalList(
-                      item: SongTile(),
+                      item: PlaylistTile(),
                       itemCount: 10,
-                      height: 120,
+                      height: 140,
                     );
                   },
                   childCount: 1,

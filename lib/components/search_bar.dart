@@ -6,7 +6,7 @@ class SearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
+      height: 40,
       child: TextField(
         cursorColor: Colors.white,
         cursorWidth: 0.7,

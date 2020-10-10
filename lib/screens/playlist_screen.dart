@@ -23,6 +23,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
     super.dispose();
   }
 
+  bool isLiked = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,16 +39,18 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                 backgroundColor: kSecondaryColor,
                 actions: <Widget>[
                   IconButton(
-                    icon: Icon(
-                      Icons.favorite_border,
-                      color: Colors.white,
-                    ),
+                    icon: isLiked? kLikedIcon: kUnLikedIcon,
+                    onPressed: (){
+                      setState(() {
+                        !isLiked ? isLiked = true : isLiked = false;
+                      });
+                    },
                   ),
                   IconButton(
-                    icon: Icon(
-                      Icons.more_vert,
-                      color: Colors.white,
-                    ),
+                    icon: Icon(Icons.more_vert,color: Colors.white,),
+                    onPressed: (){
+
+                    },
                   ),
                 ],
                 flexibleSpace: FlexibleSpaceBar(
@@ -70,39 +73,28 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
               ),
               SliverList(
                 delegate: SliverChildBuilderDelegate(
-                  (context, index) {
-                    return ListTile(
-                      contentPadding:
-                          EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                      leading: Container(
-                        width: 50,
-                        height: 50,
-                        color: kSecondaryColor,
-                        child: Icon(
-                          Icons.music_note,
-                          color: Colors.grey,
+                        (context, index){
+                      return ListTile(
+                        contentPadding: EdgeInsets.symmetric(vertical: 5,horizontal: 10),
+                        leading: Container(
+                          width: 50,
+                          height: 50,
+                          color: kSecondaryColor,
+                          child: Icon(Icons.music_note,color: Colors.grey,),
                         ),
-                      ),
-                      title: Text(
-                        'Song Name',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      subtitle: Text('Artist Name',
-                          style: TextStyle(color: Colors.white)),
-                      trailing: IconButton(
-                        icon: Icon(
-                          Icons.more_vert,
-                          color: Colors.white,
+                        title: Text('Song Name',style: TextStyle(color: Colors.white),),
+                        subtitle: Text('Artist Name',style: TextStyle(color: Colors.white)),
+                        trailing: IconButton(
+                          icon: Icon(Icons.more_vert,color: Colors.white,),
                         ),
-                      ),
-                    );
-                  },
+                      );
+                    },
                   childCount: 15,
                 ),
               ),
             ],
           ),
-          _buildFab()
+         _buildFab()
         ],
       ),
     );
@@ -123,4 +115,6 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
       ),
     );
   }
+
 }
+

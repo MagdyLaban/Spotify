@@ -3,8 +3,8 @@ import 'package:spotifynew/components/search_bar.dart';
 import 'package:spotifynew/screens/login/components/country_list.dart';
 import 'package:spotifynew/utilities/constant.dart';
 
-String countryName;
-String countryKey;
+String countryName = 'Egypt';
+String countryKey = '+20';
 
 class CountryScreen extends StatefulWidget {
   @override
