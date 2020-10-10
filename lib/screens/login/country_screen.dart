@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:spotifynew/components/search_bar.dart';
 import 'package:spotifynew/screens/login/components/country_list.dart';
-
 import 'package:spotifynew/utilities/constant.dart';
+
+String countryName;
+String countryKey;
 
 class CountryScreen extends StatefulWidget {
   @override
@@ -10,7 +12,8 @@ class CountryScreen extends StatefulWidget {
 }
 
 class _CountryScreenState extends State<CountryScreen> {
-  Map<String, String> _countryDetails = {};
+  Map<String, String> _countryDetails = {countryName: countryKey};
+
   void _sendDataBack(BuildContext context) {
     Navigator.pop(context, _countryDetails);
   }
@@ -35,7 +38,7 @@ class _CountryScreenState extends State<CountryScreen> {
               color: Colors.grey,
             ),
             onPressed: () {
-              Navigator.pop(context);
+              _sendDataBack(context);
             }),
         backgroundColor: Colors.black,
         elevation: 0.0,
@@ -62,6 +65,8 @@ class _CountryScreenState extends State<CountryScreen> {
                                   countryList[0].values.toList()[index]
                             };
                             _sendDataBack(context);
+                            countryName = countryList[0].keys.toList()[index];
+                            countryKey = countryList[0].values.toList()[index];
                           },
                           child: Row(
                             children: [
