@@ -7,9 +7,12 @@ const kHomeScreenGradient = BoxDecoration(
     begin: Alignment.bottomCenter,
     end: Alignment.topCenter,
     colors: [
-      Color(0xFF000000),
-      Color(0xFF000000),
-      Color(0xFF000000),
+      // Color(0xFF000000),
+      // Color(0xFF000000),
+      // Color(0xFF000000),
+      kBackgroundColor,
+      kBackgroundColor,
+      kBackgroundColor,
       Color(0xFF191919),
       Color(0xFF4c4c4c),
     ],
@@ -122,7 +125,7 @@ BoxDecoration kGenderLabelStyle = BoxDecoration(
   borderRadius: BorderRadius.circular(
     40.0,
   ),
-  color: Colors.black,
+  color: kBackgroundColor,
   border: Border.all(
     color: Colors.grey,
     width: 2.8,

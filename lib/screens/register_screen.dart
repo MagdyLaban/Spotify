@@ -17,6 +17,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: kBackgroundColor,
       body: Container(
         width: screenSize.width,
         height: screenSize.height,

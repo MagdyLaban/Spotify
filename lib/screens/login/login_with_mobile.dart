@@ -3,6 +3,7 @@ import 'package:spotifynew/screens/login/components/mobile_number.dart';
 import 'package:spotifynew/screens/signup/components/next_button.dart';
 import 'package:spotifynew/screens/signup/components/signup_screenBody.dart';
 import 'package:spotifynew/screens/artists_screen.dart';
+import 'package:spotifynew/utilities/constant.dart';
 
 class LoginWithMobileScreen extends StatefulWidget {
   @override
@@ -13,9 +14,9 @@ class _LoginWithMobileScreenState extends State<LoginWithMobileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: kBackgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: kBackgroundColor,
         elevation: 0.0,
       ),
       body: Column(

@@ -21,7 +21,7 @@ class _CountryScreenState extends State<CountryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: kBackgroundColor,
       appBar: AppBar(
         centerTitle: true,
         title: Text(
@@ -40,7 +40,7 @@ class _CountryScreenState extends State<CountryScreen> {
             onPressed: () {
               _sendDataBack(context);
             }),
-        backgroundColor: Colors.black,
+        backgroundColor: kBackgroundColor,
         elevation: 0.0,
       ),
       body: Padding(

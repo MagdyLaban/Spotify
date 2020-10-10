@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:spotifynew/screens/register_screen.dart';
+import 'package:spotifynew/utilities/constant.dart';
 
 class SplashScreen extends StatefulWidget {
   static const String id = 'splash screen';
@@ -21,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
     );
 
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: kBackgroundColor,
       body: Center(
         child: Image(
           width: 160,

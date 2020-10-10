@@ -4,6 +4,7 @@ import 'package:spotifynew/screens/signup/components/next_button.dart';
 import 'package:spotifynew/screens/signup/components/signup_appbar.dart';
 import 'package:spotifynew/screens/signup/components/signup_screenBody.dart';
 import 'package:spotifynew/screens/signup/gender.dart';
+import 'package:spotifynew/utilities/constant.dart';
 
 class BirthScreen extends StatefulWidget {
   static const String id = 'birth screen';
@@ -15,7 +16,7 @@ class _BirthScreenState extends State<BirthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: kBackgroundColor,
       appBar: CustomAppBar(),
       body: Column(
         children: [
