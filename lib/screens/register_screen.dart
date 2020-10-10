@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:spotifynew/login/login_screen.dart';
-import 'package:spotifynew/login/login_with_mobile.dart';
+import 'package:spotifynew/screens/login/login_screen.dart';
+import 'package:spotifynew/screens/login/login_with_mobile.dart';
 import 'package:spotifynew/screens/signup/components/rounded_button.dart';
 import 'package:spotifynew/screens/signup/email.dart';
 import 'package:spotifynew/utilities/constant.dart';
@@ -17,6 +17,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: kBackgroundColor,
       body: Container(
         width: screenSize.width,
         height: screenSize.height,

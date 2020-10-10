@@ -7,9 +7,12 @@ const kHomeScreenGradient = BoxDecoration(
     begin: Alignment.bottomCenter,
     end: Alignment.topCenter,
     colors: [
-      Color(0xFF000000),
-      Color(0xFF000000),
-      Color(0xFF000000),
+      // Color(0xFF000000),
+      // Color(0xFF000000),
+      // Color(0xFF000000),
+      kBackgroundColor,
+      kBackgroundColor,
+      kBackgroundColor,
       Color(0xFF191919),
       Color(0xFF4c4c4c),
     ],
@@ -50,12 +53,11 @@ const kLightSearchBarStyle = InputDecoration(
   contentPadding: EdgeInsets.all(10.0),
   filled: true,
   fillColor: Color(0xffffffff),
-  prefixIcon: Icon(Icons.search,color: kSecondaryColor),
+  prefixIcon: Icon(Icons.search, color: kSecondaryColor),
   hintText: 'Artist,Song or Albums',
   hintStyle: TextStyle(
     color: kBackgroundColor,
     fontSize: 14,
-
   ),
   border: OutlineInputBorder(
     borderRadius: BorderRadius.all(
@@ -74,6 +76,7 @@ const kSearchBarDarkStyle = InputDecoration(
   ),
   hintText: 'Search',
   hintStyle: TextStyle(color: Colors.grey, fontSize: 14),
+  focusedBorder: OutlineInputBorder(borderSide: BorderSide.none),
   border: OutlineInputBorder(
     borderRadius: BorderRadius.all(
       Radius.circular(5.0),
@@ -86,13 +89,13 @@ const kBackgroundColor = Color(0xff121212);
 const kAppBarTitleTextStyle = TextStyle(
   color: Colors.white,
   fontWeight: FontWeight.bold,
-  fontSize: 32,
+  fontSize: 28,
 );
 
 const kSignUpUserRequiredInputStyle = TextStyle(
   color: Colors.white,
   fontWeight: FontWeight.w700,
-  fontSize: 28.0,
+  fontSize: 25.0,
 );
 
 const kTextFieldConditionTextStyle = TextStyle(
@@ -122,7 +125,7 @@ BoxDecoration kGenderLabelStyle = BoxDecoration(
   borderRadius: BorderRadius.circular(
     40.0,
   ),
-  color: Colors.black,
+  color: kBackgroundColor,
   border: Border.all(
     color: Colors.grey,
     width: 2.8,
@@ -150,3 +153,6 @@ const kPurpleGradient = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
     colors: [Color(0xff213263), Color(0xffAC2995)]);
+
+const kUnLikedIcon = Icon(Icons.favorite_border,color: Colors.white,);
+const kLikedIcon = Icon(Icons.favorite,color: kPrimaryColor,);

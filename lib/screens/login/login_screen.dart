@@ -4,9 +4,10 @@ import 'package:spotifynew/screens/register_screen.dart';
 import 'package:spotifynew/screens/signup/components/next_button.dart';
 import 'package:spotifynew/screens/signup/components/signup_form_field.dart';
 import 'package:spotifynew/screens/signup/components/signup_screenBody.dart';
+import 'package:spotifynew/utilities/constant.dart';
 
 class LoginScreen extends StatefulWidget {
-  static const String id = 'login screen';
+  static const String id = 'screens.login screen';
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -17,9 +18,9 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       resizeToAvoidBottomPadding: false,
-      backgroundColor: Colors.black,
+      backgroundColor:kBackgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: kBackgroundColor,
         leading: IconButton(
             onPressed: () {
               Navigator.pushNamed(context, RegisterScreen.id);

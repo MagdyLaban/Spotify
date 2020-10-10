@@ -26,7 +26,7 @@ class _ArtistsScreenState extends State<ArtistsScreen> {
             searchBarStyle: kSearchBarDarkStyle,
           ),
           SliverPadding(
-            padding: EdgeInsets.symmetric(vertical: 10),
+            padding: EdgeInsets.symmetric(vertical: 5),
           ),
           ArtistsTilesSliverGrid(),
         ],

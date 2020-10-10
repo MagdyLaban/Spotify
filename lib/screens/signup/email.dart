@@ -4,6 +4,7 @@ import 'package:spotifynew/screens/signup/components/signup_appbar.dart';
 import 'package:spotifynew/screens/signup/components/signup_form_field.dart';
 import 'package:spotifynew/screens/signup/components/signup_screenBody.dart';
 import 'package:spotifynew/screens/signup/password.dart';
+import 'package:spotifynew/utilities/constant.dart';
 
 class EmailScreen extends StatefulWidget {
   static const String id = 'email screen';
@@ -16,7 +17,7 @@ class _EmailScreenState extends State<EmailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(),
-      backgroundColor: Colors.black,
+      backgroundColor: kBackgroundColor,
       body: Column(
         children: [
           SignUpBody(

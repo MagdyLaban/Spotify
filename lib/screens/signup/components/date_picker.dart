@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_holo_date_picker/date_picker.dart';
 import 'package:flutter_holo_date_picker/date_picker_theme.dart';
 import 'package:flutter_holo_date_picker/widget/date_picker_widget.dart';
+import 'package:spotifynew/utilities/constant.dart';
 
 class DatePickerBox extends StatelessWidget {
   @override
@@ -23,7 +24,7 @@ class DatePickerBox extends StatelessWidget {
           pickerTheme: DateTimePickerTheme(
             itemTextStyle: TextStyle(color: Colors.white, fontSize: 15),
             dividerColor: Colors.grey,
-            backgroundColor: Colors.black,
+            backgroundColor: kBackgroundColor,
           ),
         ),
       ),

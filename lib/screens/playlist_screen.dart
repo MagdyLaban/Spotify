@@ -23,6 +23,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
     super.dispose();
   }
 
+  bool isLiked = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,16 +34,23 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
             controller: _scrollController,
             slivers: <Widget>[
               SliverAppBar(
-                expandedHeight: MediaQuery.of(context).size.height/3,
+                expandedHeight: MediaQuery.of(context).size.height / 3,
                 centerTitle: true,
                 backgroundColor: kSecondaryColor,
                 actions: <Widget>[
                   IconButton(
-                    icon: Icon(Icons.favorite_border,color: Colors.white,),
+                    icon: isLiked? kLikedIcon: kUnLikedIcon,
+                    onPressed: (){
+                      setState(() {
+                        !isLiked ? isLiked = true : isLiked = false;
+                      });
+                    },
                   ),
                   IconButton(
                     icon: Icon(Icons.more_vert,color: Colors.white,),
+                    onPressed: (){
 
+                    },
                   ),
                 ],
                 flexibleSpace: FlexibleSpaceBar(
@@ -51,7 +59,11 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                       width: 150,
                       height: 150,
                       color: kSecondaryColor2,
-                      child: Icon(Icons.playlist_play,color: Colors.white,size: 80,),
+                      child: Icon(
+                        Icons.playlist_play,
+                        color: Colors.white,
+                        size: 80,
+                      ),
                     ),
                   ),
                   title: Text('Playlist Name'),
@@ -76,7 +88,8 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                           icon: Icon(Icons.more_vert,color: Colors.white,),
                         ),
                       );
-                    }
+                    },
+                  childCount: 15,
                 ),
               ),
             ],

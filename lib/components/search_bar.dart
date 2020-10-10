@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spotifynew/utilities/constant.dart';
+
 class SearchBar extends StatelessWidget {
   SearchBar({@required this.searchBarStyle});
   final InputDecoration searchBarStyle;
@@ -8,9 +8,10 @@ class SearchBar extends StatelessWidget {
     return Container(
       height: 40,
       child: TextField(
+        cursorColor: Colors.white,
+        cursorWidth: 0.7,
         decoration: searchBarStyle,
       ),
     );
   }
 }
-
