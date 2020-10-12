@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:spotifynew/utilities/constant.dart';
 
-class Label extends StatelessWidget {
-  Label({@required this.title,});
+class CenteredLabel extends StatelessWidget {
+  CenteredLabel({@required this.title,});
   final String title;
   @override
   Widget build(BuildContext context) {
@@ -10,8 +10,8 @@ class Label extends StatelessWidget {
       delegate: SliverChildBuilderDelegate(
               (BuildContext context,int index){
             return Padding(
-              padding: const EdgeInsets.only(top: 10,bottom: 10,left: 10 ),
-              child: Text(title,style: kLabelTextStyle),
+              padding: const EdgeInsets.only(top: 40,bottom: 15, ),
+              child: Center(child: Text(title,style: kLabelTextStyle)),
             );
           },
           childCount: 1

@@ -14,7 +14,7 @@ class ArtistsTilesSliverGrid extends StatelessWidget {
       ),
       delegate: SliverChildBuilderDelegate(
             (BuildContext context, int index) {
-          return ArtistTile();
+          return ArtistTile(onTap: (){},);
         },
         childCount: 24,
       ),

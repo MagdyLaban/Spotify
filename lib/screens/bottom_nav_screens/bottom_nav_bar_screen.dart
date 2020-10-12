@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spotifynew/screens/artists_screen.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:spotifynew/screens/bottom_nav_screens/home_screen.dart';
 import 'package:spotifynew/screens/bottom_nav_screens/library_screen.dart';
 import 'package:spotifynew/screens/bottom_nav_screens/premium_screen.dart';
@@ -34,6 +34,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body:_widgetOptions.elementAt(_selectedIndex),
+
       bottomNavigationBar: BottomNavigationBar(
 
         backgroundColor: kSecondaryColor,
@@ -43,7 +44,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
           BottomNavigationBarItem(icon: Icon(Icons.search), title: Text('Search')),
           BottomNavigationBarItem(icon: Icon(Icons.library_music), title: Text('Library')),
-          BottomNavigationBarItem(icon: Icon(Icons.star), title: Text('Premium')),
+          BottomNavigationBarItem(icon: Icon(FontAwesomeIcons.spotify), title: Text('Premium')),
         ],
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.grey,

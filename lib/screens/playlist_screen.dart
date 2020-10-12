@@ -8,20 +8,6 @@ class PlaylistScreen extends StatefulWidget {
 }
 
 class _PlaylistScreenState extends State<PlaylistScreen> {
-  ScrollController _scrollController;
-
-  @override
-  void initState() {
-    super.initState();
-    _scrollController = new ScrollController();
-    _scrollController.addListener(() => setState(() {}));
-  }
-
-  @override
-  void dispose() {
-    _scrollController.dispose();
-    super.dispose();
-  }
 
   bool isLiked = false;
   @override
@@ -31,7 +17,6 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
       body: Stack(
         children: <Widget>[
           CustomScrollView(
-            controller: _scrollController,
             slivers: <Widget>[
               SliverAppBar(
                 expandedHeight: MediaQuery.of(context).size.height / 3,

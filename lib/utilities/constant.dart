@@ -89,7 +89,7 @@ const kBackgroundColor = Color(0xff121212);
 const kAppBarTitleTextStyle = TextStyle(
   color: Colors.white,
   fontWeight: FontWeight.bold,
-  fontSize: 28,
+  fontSize: 25,
 );
 
 const kSignUpUserRequiredInputStyle = TextStyle(

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:spotifynew/components/artist_tile.dart';
 import 'package:spotifynew/components/playlist_tile.dart';
+import 'package:spotifynew/screens/artist_page.dart';
 import 'package:spotifynew/screens/settings_screen.dart';
 import 'package:spotifynew/utilities/constant.dart';
 import 'package:spotifynew/components/song_tile.dart';
@@ -21,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
         backgroundColor: kBackgroundColor,
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 0),
           child: CustomScrollView(
             slivers: <Widget>[
               SliverAppBar(
@@ -63,14 +64,16 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Label(title: 'Good evening'),
               SliverGrid(
-                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: 200,
-                    crossAxisSpacing: 10,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
                     mainAxisSpacing: 10,
                     childAspectRatio: 2.8),
                 delegate: SliverChildBuilderDelegate(
                   (BuildContext context, int index) {
-                    return DailyMixTile(index: index);
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 5),
+                      child: DailyMixTile(index: index),
+                    );
                   },
                   childCount: 6,
                 ),
@@ -82,7 +85,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 delegate: SliverChildBuilderDelegate(
                   (BuildContext context, int index) {
                     return HorizontalList(
-                      item: ArtistTile(),
+                      item: ArtistTile(
+                        onTap: (){
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ArtistPage(),));
+                        },
+                      ),
                       itemCount: 10,
                       height: 120,
                     );
