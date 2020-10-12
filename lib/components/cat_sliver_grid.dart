@@ -10,8 +10,8 @@ class CategorySliverGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverGrid(
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 200,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
           crossAxisSpacing:0.2,
            mainAxisSpacing: 5,
           childAspectRatio: 0.9,
@@ -32,7 +32,7 @@ class CategorySliverGrid extends StatelessWidget {
                   child: Container(
                     width: 170,
                     height: 170,
-                    color: kSecondaryColor2,
+                    color: kSecondaryColor,
                     child: Icon(Icons.music_note,color: Colors.white,size: 80,),
                   ),
                 ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:spotifynew/components/sliver_appbar.dart';
-import 'package:spotifynew/components/sliver_appbar_with_search.dart';
 import 'package:spotifynew/utilities/constant.dart';
 
 import 'package:spotifynew/components/cat_sliver_grid.dart';

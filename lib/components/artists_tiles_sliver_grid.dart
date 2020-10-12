@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:spotifynew/utilities/constant.dart';
 import 'package:spotifynew/components/artist_tile.dart';
 
 class ArtistsTilesSliverGrid extends StatelessWidget {
@@ -7,8 +6,8 @@ class ArtistsTilesSliverGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverGrid(
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-        maxCrossAxisExtent: 150,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3,
         crossAxisSpacing:5,
         mainAxisSpacing: 20,
       ),
