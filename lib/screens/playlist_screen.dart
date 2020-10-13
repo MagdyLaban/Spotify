@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotifynew/components/horizontal_song_tile.dart';
 import 'package:spotifynew/utilities/constant.dart';
 
 class PlaylistScreen extends StatefulWidget {
@@ -59,20 +60,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
               SliverList(
                 delegate: SliverChildBuilderDelegate(
                         (context, index){
-                      return ListTile(
-                        contentPadding: EdgeInsets.symmetric(vertical: 5,horizontal: 10),
-                        leading: Container(
-                          width: 50,
-                          height: 50,
-                          color: kSecondaryColor,
-                          child: Icon(Icons.music_note,color: Colors.grey,),
-                        ),
-                        title: Text('Song Name',style: TextStyle(color: Colors.white),),
-                        subtitle: Text('Artist Name',style: TextStyle(color: Colors.white)),
-                        trailing: IconButton(
-                          icon: Icon(Icons.more_vert,color: Colors.white,),
-                        ),
-                      );
+                      return HorizontalSongTile();
                     },
                   childCount: 15,
                 ),
