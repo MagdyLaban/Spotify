@@ -25,7 +25,7 @@ class PlaylistTile extends StatelessWidget {
                 height: 120,
                 color: kSecondaryColor,
                 child: Icon(
-                  Icons.playlist_play,
+                  Icons.queue_music,
                   color: Colors.grey,
                   size: 60,
                 ),
