@@ -1,6 +1,8 @@
 name: spotifynew
 description: create Spotify UI using Flutter
 
+
+
 publish_to: 'none'
 version: 1.0.0+1
 

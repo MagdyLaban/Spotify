@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spotifynew/screens/artists_screen.dart';
 import 'package:spotifynew/screens/category_screen.dart';
+import 'package:spotifynew/screens/likes_screen.dart';
 import 'package:spotifynew/screens/login/login_screen.dart';
 import 'package:spotifynew/screens/playlist_screen.dart';
 import 'package:spotifynew/screens/register_screen.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: SplashScreen.id,
+      initialRoute: LikesScreen.id,
       routes: {
         SplashScreen.id: (context) => SplashScreen(),
         RegisterScreen.id: (context) => RegisterScreen(),
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         SettingScreen.id: (context) => SettingScreen(),
         PlaylistScreen.id: (context) => PlaylistScreen(),
         CategoryScreen.id: (context) => CategoryScreen(),
+        LikesScreen.id: (context) => LikesScreen(),
       },
     );
   }
