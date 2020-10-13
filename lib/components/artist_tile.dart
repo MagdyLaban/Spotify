@@ -22,6 +22,7 @@ class ArtistTile extends StatelessWidget {
                   color: kSecondaryColor,
                   borderRadius: BorderRadius.circular(200)
               ),
+              child: Icon(Icons.person_outline,color: Colors.grey,size: 50,),
             ),
             Text('Artist Name',style: kTileNameTextStyle)
           ],

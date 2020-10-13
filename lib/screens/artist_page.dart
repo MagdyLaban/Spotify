@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:spotifynew/components/artist_tile.dart';
 import 'package:spotifynew/components/centered_label.dart';
 import 'package:spotifynew/components/horizontal_list.dart';
-import 'package:spotifynew/components/label_text.dart';
+import 'package:spotifynew/components/horizontal_playlist_tile.dart';
 import 'package:spotifynew/components/playlist_tile.dart';
 import 'package:spotifynew/utilities/constant.dart';
 
@@ -14,6 +14,7 @@ class ArtistPage extends StatefulWidget {
 }
 
 class _ArtistPageState extends State<ArtistPage> {
+  bool isFollowed = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,20 +28,31 @@ class _ArtistPageState extends State<ArtistPage> {
                 centerTitle: true,
                 backgroundColor: kSecondaryColor,
                 actions: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: Container(
-                      width: 80,
-                      decoration: BoxDecoration(
-                        border: Border.all(width: 1.2, color: Colors.white),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(5.0),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        !isFollowed ? isFollowed = true : isFollowed = false;
+                      });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: Container(
+                        width: 80,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                              width: 1.2,
+                              color: !isFollowed ? Colors.white : Colors.grey),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(5.0),
+                          ),
                         ),
-                      ),
-                      child: Center(
-                        child: Text(
-                          'FOLLOWING',
-                          style: TextStyle(color: Colors.white, fontSize: 10),
+                        child: Center(
+                          child: Text(
+                            !isFollowed ? 'FOLLOW' : 'FOLLOWING',
+                            style: TextStyle(
+                                color: !isFollowed ? Colors.white : Colors.grey,
+                                fontSize: 10),
+                          ),
                         ),
                       ),
                     ),
@@ -98,7 +110,7 @@ class _ArtistPageState extends State<ArtistPage> {
                       ),
                     );
                   },
-                  childCount: 5,
+                  childCount: 10,
                 ),
               ),
               CenteredLabel(
@@ -107,47 +119,9 @@ class _ArtistPageState extends State<ArtistPage> {
               SliverList(
                 delegate: SliverChildBuilderDelegate(
                   (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 10),
-                      child: Row(
-                        children: <Widget>[
-                          Container(
-                            width: 70,
-                            height: 70,
-                            color: kSecondaryColor,
-                            child: Icon(
-                              Icons.music_note,
-                              color: Colors.grey,
-                            ),
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(
-                                'Song Name',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 17,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                'release date',
-                                style: TextStyle(color: Colors.grey),
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                    );
+                    return HorizontalPlaylistTile();
                   },
-                  childCount: 4,
+                  childCount: 7,
                 ),
               ),
               CenteredLabel(
@@ -201,38 +175,56 @@ class _ArtistPageState extends State<ArtistPage> {
                 delegate: SliverChildBuilderDelegate(
                     (BuildContext context, int index) {
                   return Padding(
-                    padding:
-                        const EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     child: Container(
                       width: MediaQuery.of(context).size.width,
                       height: 300,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: kSecondaryColor,
-                        image: DecorationImage(
-                          image: NetworkImage(
-                              'https://i.ytimg.com/vi/IXaGi48DGLE/maxresdefault.jpg'),
-                          fit: BoxFit.cover
-                        )
-                      ),
+                          borderRadius: BorderRadius.circular(10),
+                          color: kSecondaryColor,
+                          image: DecorationImage(
+                              image: NetworkImage(
+                                  'https://i.ytimg.com/vi/IXaGi48DGLE/maxresdefault.jpg'),
+                              fit: BoxFit.cover)),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 15),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 15, vertical: 15),
                         child: Column(
                           children: <Widget>[
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
-                                Icon(Icons.verified_user,color: Colors.blue,),
-                                SizedBox(width: 5,),
-                                Text('VERIFIED ARTIST',style: TextStyle(color: Colors.white,fontSize: 12,letterSpacing: 1.2),),
+                                Icon(
+                                  Icons.verified_user,
+                                  color: Colors.blue,
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text(
+                                  'VERIFIED ARTIST',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                      letterSpacing: 1.2),
+                                ),
                               ],
                             ),
                             Spacer(),
                             Row(
                               children: <Widget>[
-                                Text('---,--- monthly listeners',style: TextStyle(color: Colors.white,fontSize: 20,letterSpacing: 1.1),),
+                                Text(
+                                  '---,--- monthly listeners',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                      letterSpacing: 1.1),
+                                ),
                                 Spacer(),
-                                Icon(Icons.arrow_forward_ios,color: Colors.white,)
+                                Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: Colors.white,
+                                )
                               ],
                             )
                           ],
