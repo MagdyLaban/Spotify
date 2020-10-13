@@ -45,8 +45,9 @@ const kSignUpFormTextStyle = TextStyle(
 
 const kLogInLabelTextStyle = TextStyle(
   color: Colors.white,
-  fontWeight: FontWeight.w700,
+  fontWeight: FontWeight.w500,
   fontSize: 17.0,
+  letterSpacing: 0.2,
 );
 
 const kLightSearchBarStyle = InputDecoration(
@@ -154,5 +155,11 @@ const kPurpleGradient = LinearGradient(
     end: Alignment.bottomRight,
     colors: [Color(0xff213263), Color(0xffAC2995)]);
 
-const kUnLikedIcon = Icon(Icons.favorite_border,color: Colors.white,);
-const kLikedIcon = Icon(Icons.favorite,color: kPrimaryColor,);
+const kUnLikedIcon = Icon(
+  Icons.favorite_border,
+  color: Colors.white,
+);
+const kLikedIcon = Icon(
+  Icons.favorite,
+  color: kPrimaryColor,
+);

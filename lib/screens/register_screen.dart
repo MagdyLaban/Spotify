@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:spotifynew/screens/login/login_screen.dart';
 import 'package:spotifynew/screens/login/login_with_mobile.dart';
 import 'package:spotifynew/screens/signup/components/rounded_button.dart';
@@ -66,7 +67,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   isOnlyText: false,
                   text: 'Continue with phone number',
                   labelIcon: Icon(
-                    Icons.phone_iphone,
+                    Feather.smartphone,
                     color: Colors.white,
                   ),
                 ),
@@ -74,7 +75,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   isOnlyText: false,
                   text: 'Continue with Facebook',
                   labelIcon: Icon(
-                    Icons.phone_iphone,
+                    Feather.facebook,
                     color: Colors.white,
                   ),
                 ),

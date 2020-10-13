@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:spotifynew/screens/bottom_nav_screens/home_screen.dart';
 import 'package:spotifynew/screens/bottom_nav_screens/library_screen.dart';
 import 'package:spotifynew/screens/bottom_nav_screens/premium_screen.dart';
@@ -12,9 +12,7 @@ class BottomNavBar extends StatefulWidget {
   _BottomNavBarState createState() => _BottomNavBarState();
 }
 
-
 class _BottomNavBarState extends State<BottomNavBar> {
-
   int _selectedIndex = 0;
   List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
@@ -23,9 +21,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
     PremiumScreen(),
   ];
 
-  void _onItemTapped (int index){
+  void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex= index;
+      _selectedIndex = index;
     });
   }
 
@@ -33,24 +31,24 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackgroundColor,
-      body:_widgetOptions.elementAt(_selectedIndex),
-
+      body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
-
         backgroundColor: kSecondaryColor,
         type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
-          BottomNavigationBarItem(icon: Icon(Icons.search), title: Text('Search')),
-          BottomNavigationBarItem(icon: Icon(Icons.library_music), title: Text('Library')),
-          BottomNavigationBarItem(icon: Icon(FontAwesomeIcons.spotify), title: Text('Premium')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.search), title: Text('Search')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.library_music), title: Text('Library')),
+          BottomNavigationBarItem(
+              icon: Icon(Entypo.spotify), title: Text('Premium')),
         ],
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.grey,
         onTap: _onItemTapped,
       ),
-
     );
   }
 }

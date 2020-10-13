@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spotifynew/screens/login/components/mobile_number.dart';
+import 'package:spotifynew/screens/login/mobile_code_screen.dart';
 import 'package:spotifynew/screens/signup/components/next_button.dart';
 import 'package:spotifynew/screens/signup/components/signup_screenBody.dart';
 import 'package:spotifynew/screens/artists_screen.dart';
@@ -30,12 +31,11 @@ class _LoginWithMobileScreenState extends State<LoginWithMobileScreen> {
             active: true,
             text: 'NEXT',
             onPress: () {
-              Navigator.pushAndRemoveUntil(
+              Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => ArtistsScreen(),
+                  builder: (context) => MobileCode(),
                 ),
-                (route) => false,
               );
             },
           ),
