@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:spotifynew/components/horizontal_playlist_tile.dart';
 import 'package:spotifynew/utilities/constant.dart';
 
 class LibraryScreen extends StatefulWidget {
@@ -61,7 +62,8 @@ class _LibraryScreenState extends State<LibraryScreen>
               children: [
                 ListView.builder(
 
-                  itemBuilder: (context, index) => ListTile(
+                  //<<اهي يا حسام
+                  itemBuilder: (context, index) => index == 0?ListTile(
                     contentPadding:
                     EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                     leading: Container(
@@ -87,7 +89,7 @@ class _LibraryScreenState extends State<LibraryScreen>
                     ),
                     subtitle: Text('10 songs',
                         style: TextStyle(color: Colors.white60)),
-                  ),
+                  ):HorizontalPlaylistTile(),
                   itemCount: 15,
                 ),
                 ListView.builder(
