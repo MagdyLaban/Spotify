@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:spotifynew/utilities/constant.dart';
 
 class ArtistTile extends StatelessWidget {
@@ -22,7 +23,7 @@ class ArtistTile extends StatelessWidget {
                   color: kSecondaryColor,
                   borderRadius: BorderRadius.circular(200)
               ),
-              child: Icon(Icons.person_outline,color: Colors.grey,size: 50,),
+              child: Icon(Icons.person,color: Colors.grey,size: 50,),
             ),
             Text('Artist Name',style: kTileNameTextStyle)
           ],

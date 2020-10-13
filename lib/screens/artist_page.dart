@@ -4,6 +4,7 @@ import 'package:spotifynew/components/artist_tile.dart';
 import 'package:spotifynew/components/centered_label.dart';
 import 'package:spotifynew/components/horizontal_list.dart';
 import 'package:spotifynew/components/horizontal_playlist_tile.dart';
+import 'package:spotifynew/components/horizontal_song_tile.dart';
 import 'package:spotifynew/components/playlist_tile.dart';
 import 'package:spotifynew/utilities/constant.dart';
 
@@ -84,31 +85,7 @@ class _ArtistPageState extends State<ArtistPage> {
               SliverList(
                 delegate: SliverChildBuilderDelegate(
                   (context, index) {
-                    return ListTile(
-                      contentPadding:
-                          EdgeInsets.symmetric(vertical: 1, horizontal: 10),
-                      leading: Container(
-                        width: 50,
-                        height: 50,
-                        color: kSecondaryColor,
-                        child: Icon(
-                          Icons.music_note,
-                          color: Colors.grey,
-                        ),
-                      ),
-                      title: Text(
-                        'Song Name',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      subtitle:
-                          Text('# views', style: TextStyle(color: Colors.grey)),
-                      trailing: IconButton(
-                        icon: Icon(
-                          Icons.more_vert,
-                          color: Colors.white,
-                        ),
-                      ),
-                    );
+                    return HorizontalSongTile();
                   },
                   childCount: 10,
                 ),
@@ -195,7 +172,7 @@ class _ArtistPageState extends State<ArtistPage> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
                                 Icon(
-                                  Icons.verified_user,
+                                  CupertinoIcons.check_mark_circled_solid,
                                   color: Colors.blue,
                                 ),
                                 SizedBox(
@@ -258,3 +235,4 @@ class _ArtistPageState extends State<ArtistPage> {
     );
   }
 }
+
