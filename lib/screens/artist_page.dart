@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:spotifynew/components/artist_tile.dart';
 import 'package:spotifynew/components/centered_label.dart';
 import 'package:spotifynew/components/horizontal_list.dart';
