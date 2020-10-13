@@ -31,9 +31,7 @@ class _LibraryScreenState extends State<LibraryScreen>
             ),
           ),
           TabBar(
-            onTap: (index) {
-
-            },
+            onTap: (index) {},
             controller: tabController,
             labelStyle: TextStyle(
               fontWeight: FontWeight.bold,
@@ -61,79 +59,151 @@ class _LibraryScreenState extends State<LibraryScreen>
               controller: tabController,
               children: [
                 ListView.builder(
-
                   //<<اهي يا حسام
-                  itemBuilder: (context, index) => index == 0?ListTile(
-                    contentPadding:
-                    EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                    leading: Container(
-                      width: 60,
-                      height: 60,
-                      decoration: BoxDecoration(
-                        gradient:LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                            colors: [Color(0xff046d50), Colors.greenAccent]
-                        ),
-                      ),
-                      child: Icon(
-                        Icons.favorite,
-                        color: Colors.white,
-                      ),
-                    ),
-                    title: Text(
-                      'liked songs',
-                      style: TextStyle(color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    subtitle: Text('10 songs',
-                        style: TextStyle(color: Colors.white60)),
-                  ):HorizontalPlaylistTile(),
+                  itemBuilder: (context, index) => index == 0
+                      ? Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 10),
+                          child: Row(
+                            children: <Widget>[
+                              Container(
+                                width: 70,
+                                height: 70,
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
+                                    colors: [Colors.indigo[900], Colors.indigo[500],Colors.indigo[200],Colors.white]
+                                  )
+                                ),
+                                child: Icon(
+                                  Icons.favorite,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 15,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Text(
+                                    'Playlist Name',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 17,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(
+                                    'release date',
+                                    style: TextStyle(color: Colors.grey),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
+                        )
+                      : HorizontalPlaylistTile(),
                   itemCount: 15,
                 ),
                 ListView.builder(
-
-                  itemBuilder: (context, index) => ListTile(
-                    contentPadding:
-                    EdgeInsets.symmetric(vertical: 8, horizontal: 10),
-                    leading: Container(
-                      width: 58,
-                      height: 58,
-                      decoration: BoxDecoration(
-                          color: kSecondaryColor,
-                          borderRadius: BorderRadius.circular(70)
-                      ),
+                  itemBuilder: (context, index) => index == 14
+                      ? Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 10),
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          width: 70,
+                          height: 70,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(70),
+                              color: kSecondaryColor,
+                          ),
+                          child: Icon(Icons.add,
+                          color: Colors.white,) ,
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              'Add Artist',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 19,
+                                fontWeight: FontWeight.bold
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
-                    title: Text(
-                      'Artist',
-                      style: TextStyle(color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold),
+                  )
+                      : Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 10),
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          width: 70,
+                          height: 70,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(70),
+                            color: kSecondaryColor,
+                          ),
+                          child: Icon(Icons.person,
+                            color: Colors.grey,
+                          size: 50,) ,
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              ' Artist Name',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.bold
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                   itemCount: 15,
                 ),
                 Center(
                     child: Padding(
-                      padding: const EdgeInsets.only(top:200.0),
-                      child: Column(
-                        children: [
-                          Text(
-                            "Your albums will",
-                            style: TextStyle(fontSize: 30,
+                  padding: const EdgeInsets.only(top: 200.0),
+                  child: Column(
+                    children: [
+                      Text(
+                        "Your albums will",
+                        style: TextStyle(
+                            fontSize: 30,
                             color: Colors.white,
                             fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            " appear here ",
-                            style: TextStyle(fontSize: 30,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ],
                       ),
-                    )),
+                      Text(
+                        " appear here ",
+                        style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                )),
               ],
             ),
           )
