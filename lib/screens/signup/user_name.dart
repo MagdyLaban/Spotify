@@ -4,6 +4,7 @@ import 'package:spotifynew/screens/signup/components/next_button.dart';
 import 'package:spotifynew/screens/signup/components/signup_appbar.dart';
 import 'package:spotifynew/screens/signup/components/signup_form_field.dart';
 import 'package:spotifynew/screens/signup/components/signup_screenBody.dart';
+import 'package:spotifynew/screens/signup/components/terms_privacy.dart';
 import 'package:spotifynew/utilities/constant.dart';
 
 class UserNameScreen extends StatefulWidget {
@@ -40,6 +41,7 @@ class _UserNameScreenState extends State<UserNameScreen> {
               );
             },
           ),
+          TermsAndPrivacy(),
         ],
       ),
     );
