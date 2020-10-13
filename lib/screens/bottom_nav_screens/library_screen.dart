@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:spotifynew/components/horizontal_playlist_tile.dart';
+import 'package:spotifynew/screens/artists_screen.dart';
 import 'package:spotifynew/utilities/constant.dart';
 
 class LibraryScreen extends StatefulWidget {
@@ -47,8 +48,8 @@ class _LibraryScreenState extends State<LibraryScreen>
               )
             ],
             labelColor: Colors.white,
-            unselectedLabelColor: Colors.white12,
-            indicatorColor: Colors.greenAccent,
+            unselectedLabelColor: Colors.grey[600],
+            indicatorColor: Colors.green,
             indicatorSize: TabBarIndicatorSize.label,
             indicatorWeight: 2,
             isScrollable: true,
@@ -88,17 +89,18 @@ class _LibraryScreenState extends State<LibraryScreen>
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   Text(
-                                    'Playlist Name',
+                                    'Liked Songs',
                                     style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 17,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold
                                     ),
                                   ),
                                   SizedBox(
                                     height: 5,
                                   ),
                                   Text(
-                                    'release date',
+                                    '10 songs',
                                     style: TextStyle(color: Colors.grey),
                                   )
                                 ],
@@ -148,36 +150,45 @@ class _LibraryScreenState extends State<LibraryScreen>
                       : Padding(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 10, vertical: 10),
-                    child: Row(
-                      children: <Widget>[
-                        Container(
-                          width: 70,
-                          height: 70,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(70),
-                            color: kSecondaryColor,
-                          ),
-                          child: Icon(Icons.person,
-                            color: Colors.grey,
-                          size: 50,) ,
-                        ),
-                        SizedBox(
-                          width: 15,
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Text(
-                              ' Artist Name',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 19,
-                                  fontWeight: FontWeight.bold
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ArtistsScreen(),
+                            ));
+                      },
+                      child: Row(
+                        children: <Widget>[
+                          Container(
+                              width: 70,
+                              height: 70,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(70),
+                                color: kSecondaryColor,
                               ),
+                              child: Icon(Icons.person,
+                                color: Colors.grey,
+                              size: 50,) ,
                             ),
-                          ],
-                        ),
-                      ],
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                ' Artist Name',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.bold
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   itemCount: 15,
