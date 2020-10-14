@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:spotifynew/utilities/constant.dart';
 import 'package:spotifynew/screens/playlist_screen.dart';
 
@@ -25,7 +26,7 @@ class PlaylistTile extends StatelessWidget {
                 height: 120,
                 color: kSecondaryColor,
                 child: Icon(
-                  Icons.queue_music,
+                  Feather.music,
                   color: Colors.grey,
                   size: 60,
                 ),

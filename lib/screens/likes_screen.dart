@@ -8,11 +8,11 @@ class LikesScreen extends StatefulWidget {
 }
 
 class _LikesScreenState extends State<LikesScreen> {
-
-  bool isLiked = true ;
+  bool isLiked = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       backgroundColor: kBackgroundColor,
       body: Stack(
         children: <Widget>[
@@ -21,13 +21,15 @@ class _LikesScreenState extends State<LikesScreen> {
               SliverAppBar(
                 expandedHeight: MediaQuery.of(context).size.height / 7,
                 centerTitle: true,
-                backgroundColor: kSecondaryColor,
+                backgroundColor: kSecondaryColor.withAlpha(10),
+                elevation: 0,
                 actions: <Widget>[
                   IconButton(
-                    icon: Icon(Icons.more_vert,color: Colors.white,),
-                    onPressed: (){
-
-                    },
+                    icon: Icon(
+                      Icons.more_vert,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {},
                   ),
                 ],
                 flexibleSpace: FlexibleSpaceBar(
@@ -46,17 +48,23 @@ class _LikesScreenState extends State<LikesScreen> {
                   background: Center(
                     child: Container(
                       child: Padding(
-                        padding: const EdgeInsets.only(left:120.0,top:23),
-                        child: Text("Liked Songs",style: kLabelTextStyle,),
+                        padding: const EdgeInsets.only(left: 120.0, top: 23),
+                        child: Text(
+                          "Liked Songs",
+                          style: kLabelTextStyle,
+                        ),
                       ),
                       height: MediaQuery.of(context).size.height / 6,
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomCenter, colors: [Colors.indigo[900], Colors.indigo[400],Colors.white60]
-                        )
-                      ),
+                          gradient: LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomCenter,
+                              colors: [
+                            Colors.indigo[900],
+                            Colors.indigo[400],
+                            Colors.white60
+                          ])),
                     ),
                   ),
                 ),
@@ -66,25 +74,27 @@ class _LikesScreenState extends State<LikesScreen> {
               SliverPadding(padding: EdgeInsets.only(top: 15)),
               SliverList(
                 delegate: SliverChildBuilderDelegate(
-                      (context, index){
+                  (context, index) {
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
                         decoration: BoxDecoration(
                             color: Color(0xff282828),
-                          borderRadius: BorderRadius.circular(12)
-                        ),
+                            borderRadius: BorderRadius.circular(12)),
                         child: Row(
                           children: [
                             Container(
                               decoration: BoxDecoration(
-                                color: Colors.grey[800],
-                                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(12),topLeft: Radius.circular(12))
-                              ),
+                                  color: Colors.grey[800],
+                                  borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(12),
+                                      topLeft: Radius.circular(12))),
                               width: 80,
                               height: 80,
-                              child: Icon(Icons.play_arrow,
-                              color: Colors.white,),
+                              child: Icon(
+                                Icons.play_arrow,
+                                color: Colors.white,
+                              ),
                             ),
                             Padding(
                               padding: const EdgeInsets.all(10.0),
@@ -94,10 +104,9 @@ class _LikesScreenState extends State<LikesScreen> {
                                   Text(
                                     'Song Name',
                                     style: TextStyle(
-                                      fontSize: 18,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold
-                                    ),
+                                        fontSize: 18,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
                                   ),
                                   SizedBox(
                                     height: 5,
@@ -112,22 +121,24 @@ class _LikesScreenState extends State<LikesScreen> {
                                 ],
                               ),
                             ),
-                            SizedBox(width: 80,),
+                            SizedBox(
+                              width: 80,
+                            ),
                             IconButton(
-                              icon: isLiked? kLikedIcon: kUnLikedIcon,
-                              onPressed: (){
+                              icon: isLiked ? kLikedIcon : kUnLikedIcon,
+                              onPressed: () {
                                 setState(() {
                                   !isLiked ? isLiked = true : isLiked = false;
                                 });
                               },
                             ),
                             IconButton(
-                              icon: Icon(Icons.more_vert,color: Colors.white,),
-                              onPressed: (){
-
-                              },
+                              icon: Icon(
+                                Icons.more_vert,
+                                color: Colors.white,
+                              ),
+                              onPressed: () {},
                             ),
-
                           ],
                         ),
                       ),
@@ -142,7 +153,4 @@ class _LikesScreenState extends State<LikesScreen> {
       ),
     );
   }
-
-
 }
-

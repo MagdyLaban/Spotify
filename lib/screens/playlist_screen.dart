@@ -44,11 +44,11 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                     child: Container(
                       width: 150,
                       height: 150,
-                      color: kSecondaryColor2,
-                      child: Icon(
-                        Icons.playlist_play,
-                        color: Colors.white,
-                        size: 80,
+                      decoration: BoxDecoration(
+                          color: kSecondaryColor2,
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/od.jpg'),
+                        )
                       ),
                     ),
                   ),

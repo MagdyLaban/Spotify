@@ -10,7 +10,7 @@ class Label extends StatelessWidget {
       delegate: SliverChildBuilderDelegate(
               (BuildContext context,int index){
             return Padding(
-              padding: const EdgeInsets.only(top: 50,bottom: 20,left: 10 ),
+              padding: const EdgeInsets.only(top: 40,bottom: 20,left: 10 ),
               child: Text(title,style: kLabelTextStyle),
             );
           },

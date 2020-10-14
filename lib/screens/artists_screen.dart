@@ -36,7 +36,13 @@ class _ArtistsScreenState extends State<ArtistsScreen> {
         child: RoundedActionButton(
           title: 'DONE',
           onPressed: () {
-            Navigator.pushReplacementNamed(context, BottomNavBar.id);
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(
+                builder: (BuildContext context) => BottomNavBar(),
+              ),
+                  (route) => false,
+            );
           },
         ),
       ),

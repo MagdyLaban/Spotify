@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:spotifynew/screens/bottom_nav_screens/bottom_nav_bar_screen.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:spotifynew/screens/bottom_nav_screens/premium_screen.dart';
-import 'package:spotifynew/screens/splash_screen.dart';
 import 'package:spotifynew/utilities/constant.dart';
 import 'package:spotifynew/components/rounded_action_button.dart';
 
@@ -332,7 +331,7 @@ class _SettingScreenState extends State<SettingScreen> {
               Mood(text: 'Other'),
               SettingItem(
                   title: 'Log out',
-                  subtitle: 'You are logged in as Kareem El-Bolaqi'),
+                  subtitle: 'You are logged in as Esam Smesm'),
             ],
           ),
         ),
@@ -403,10 +402,7 @@ class ProfileButton extends StatelessWidget {
       child: Row(
         children: <Widget>[
           CircleAvatar(
-            child: Text(
-              'K',
-              style: TextStyle(fontSize: 30, color: Colors.black),
-            ),
+            child:Icon(Feather.user,size: 40,color: kBackgroundColor,),
             radius: 28,
             backgroundColor: Colors.deepOrange,
           ),

@@ -72,10 +72,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   (BuildContext context, int index) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 5),
-                      child: DailyMixTile(index: index),
+                      child: DailyMixTile(index: index,image: (index+1).toString(),),
                     );
                   },
-                  childCount: 6,
+                  childCount: 4,
                 ),
               ),
               Label(

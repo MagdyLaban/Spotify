@@ -27,7 +27,8 @@ class _ArtistPageState extends State<ArtistPage> {
               SliverAppBar(
                 expandedHeight: MediaQuery.of(context).size.height / 3,
                 centerTitle: true,
-                backgroundColor: kSecondaryColor,
+                backgroundColor: kSecondaryColor.withAlpha(10),
+                elevation: 0,
                 actions: <Widget>[
                   GestureDetector(
                     onTap: () {

@@ -59,7 +59,13 @@ class _LoginScreenState extends State<LoginScreen> {
             Center(
               child: NextButton(
                 onPress: () {
-                  Navigator.pushNamed(context, BottomNavBar.id);
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => BottomNavBar(),
+                    ),
+                        (route) => false,
+                  );
                 },
                 text: 'LOG IN',
                 active: false,
