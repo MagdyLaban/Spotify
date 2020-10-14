@@ -9,7 +9,7 @@ class LikesScreen extends StatefulWidget {
 
 class _LikesScreenState extends State<LikesScreen> {
 
-  bool isLiked = false;
+  bool isLiked = true ;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,66 +31,118 @@ class _LikesScreenState extends State<LikesScreen> {
                   ),
                 ],
                 flexibleSpace: FlexibleSpaceBar(
+                  title: Container(
+                    width: 50,
+                    height: 50,
+                    child: Icon(Icons.play_arrow,
+                    color : Colors.white),
+                    decoration: BoxDecoration(
+                      color: kPrimaryColor,
+                      borderRadius: BorderRadius.circular(80)
+                    ),
+                  ),
+                  centerTitle: true,
+                  titlePadding: EdgeInsets.only(top: 0),
                   background: Center(
                     child: Container(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left:120.0,top:23),
+                        child: Text("Liked Songs",style: kLabelTextStyle,),
+                      ),
+                      height: MediaQuery.of(context).size.height / 6,
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           begin: Alignment.topLeft,
-                          end: Alignment.bottomCenter, colors: [Colors.indigo[900], Colors.indigo[400],Colors.grey,kBackgroundColor]
+                          end: Alignment.bottomCenter, colors: [Colors.indigo[900], Colors.indigo[400],Colors.white60]
                         )
                       ),
                     ),
                   ),
                 ),
                 pinned: true,
-
-
+                floating: false,
               ),
+              SliverPadding(padding: EdgeInsets.only(top: 15)),
               SliverList(
                 delegate: SliverChildBuilderDelegate(
                       (context, index){
-                    return ListTile(
-                      contentPadding: EdgeInsets.symmetric(vertical: 5,horizontal: 10),
-                      leading: Container(
-                        width: 50,
-                        height: 50,
-                        color: kSecondaryColor,
-                        child: Icon(Icons.music_note,color: Colors.grey,),
-                      ),
-                      title: Text('Song Name',style: TextStyle(color: Colors.white),),
-                      subtitle: Text('Artist Name',style: TextStyle(color: Colors.white)),
-                      trailing: IconButton(
-                        icon: Icon(Icons.more_vert,color: Colors.white,),
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Color(0xff282828),
+                          borderRadius: BorderRadius.circular(12)
+                        ),
+                        child: Row(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.grey[800],
+                                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(12),topLeft: Radius.circular(12))
+                              ),
+                              width: 80,
+                              height: 80,
+                              child: Icon(Icons.play_arrow,
+                              color: Colors.white,),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Song Name',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(
+                                    'Artist Name',
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.grey,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(width: 80,),
+                            IconButton(
+                              icon: isLiked? kLikedIcon: kUnLikedIcon,
+                              onPressed: (){
+                                setState(() {
+                                  !isLiked ? isLiked = true : isLiked = false;
+                                });
+                              },
+                            ),
+                            IconButton(
+                              icon: Icon(Icons.more_vert,color: Colors.white,),
+                              onPressed: (){
+
+                              },
+                            ),
+
+                          ],
+                        ),
                       ),
                     );
                   },
-                  childCount: 15,
+                  childCount: 10,
                 ),
               ),
             ],
           ),
-          _buildFab()
         ],
       ),
     );
   }
 
-  Widget _buildFab() {
-    // double top = 245; //default top margin, -4 for exact alignment
-    // if (_scrollController.hasClients) {
-    //  top -= _scrollController.offset;
-    // }
-    return Positioned(
-      top: 85,
-      right: 10,
-      child: FloatingActionButton(
-        backgroundColor: kPrimaryColor,
-        onPressed: () => {},
-        child: Icon(Icons.play_arrow),
-      ),
-    );
-  }
 
 }
 

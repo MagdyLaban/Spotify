@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:spotifynew/components/horizontal_playlist_tile.dart';
+import 'package:spotifynew/screens/artist_page.dart';
 import 'package:spotifynew/screens/artists_screen.dart';
+import 'package:spotifynew/screens/likes_screen.dart';
 import 'package:spotifynew/utilities/constant.dart';
 
 class LibraryScreen extends StatefulWidget {
@@ -60,52 +62,59 @@ class _LibraryScreenState extends State<LibraryScreen>
               controller: tabController,
               children: [
                 ListView.builder(
-                  //<<اهي يا حسام
                   itemBuilder: (context, index) => index == 0
                       ? Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 10, vertical: 10),
-                          child: Row(
-                            children: <Widget>[
-                              Container(
-                                width: 70,
-                                height: 70,
-                                decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topLeft,
-                                    end: Alignment.bottomRight,
-                                    colors: [Colors.indigo[900], Colors.indigo[500],Colors.indigo[200],Colors.white]
-                                  )
+                          child: GestureDetector(
+                            onTap: (){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => LikesScreen(),));
+                            },
+                            child: Row(
+                              children: <Widget>[
+                                Container(
+                                  width: 70,
+                                  height: 70,
+                                  decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                      begin: Alignment.topLeft,
+                                      end: Alignment.bottomRight,
+                                      colors: [Colors.indigo[900], Colors.indigo[500],Colors.indigo[200],Colors.white]
+                                    )
+                                  ),
+                                  child: Icon(
+                                    Icons.favorite,
+                                    color: Colors.white,
+                                  ),
                                 ),
-                                child: Icon(
-                                  Icons.favorite,
-                                  color: Colors.white,
+                                SizedBox(
+                                  width: 15,
                                 ),
-                              ),
-                              SizedBox(
-                                width: 15,
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text(
-                                    'Liked Songs',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text(
+                                      'Liked Songs',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Text(
-                                    '10 songs',
-                                    style: TextStyle(color: Colors.grey),
-                                  )
-                                ],
-                              ),
-                            ],
+                                    SizedBox(
+                                      height: 5,
+                                    ),
+                                    Text(
+                                      '10 songs',
+                                      style: TextStyle(color: Colors.grey),
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         )
                       : HorizontalPlaylistTile(),
@@ -116,35 +125,39 @@ class _LibraryScreenState extends State<LibraryScreen>
                       ? Padding(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 10, vertical: 10),
-                    child: Row(
-                      children: <Widget>[
-                        Container(
-                          width: 70,
-                          height: 70,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(70),
-                              color: kSecondaryColor,
-                          ),
-                          child: Icon(Icons.add,
-                          color: Colors.white,) ,
-                        ),
-                        SizedBox(
-                          width: 15,
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Text(
-                              'Add Artist',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold
-                              ),
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ArtistsScreen(),
+                            ));
+                      },
+                      child: Row(
+                        children: <Widget>[
+                          Container(
+                            width: 70,
+                            height: 70,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(70),
+                                color: kSecondaryColor,
                             ),
-                          ],
-                        ),
-                      ],
+                            child: Icon(Icons.add,
+                            color: Colors.white,) ,
+                          ),
+                          SizedBox(
+                            width: 18,
+                          ),
+                          Text(
+                            'Add Artist',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 19,
+                              fontWeight: FontWeight.bold
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   )
                       : Padding(
@@ -155,7 +168,7 @@ class _LibraryScreenState extends State<LibraryScreen>
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ArtistsScreen(),
+                              builder: (context) => ArtistPage(),
                             ));
                       },
                       child: Row(
