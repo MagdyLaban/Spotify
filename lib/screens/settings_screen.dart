@@ -412,7 +412,7 @@ class ProfileButton extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text('Kareem El-Bolaqi',
+              Text('Esam Smesm',
                   style: TextStyle(fontSize: 23, color: Colors.white)),
               Text(
                 'view profile',
