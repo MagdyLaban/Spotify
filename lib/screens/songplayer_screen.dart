@@ -38,7 +38,7 @@ class _SongPlayerState extends State<SongPlayer> {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(15),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -51,7 +51,7 @@ class _SongPlayerState extends State<SongPlayer> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.0),
+              padding: EdgeInsets.symmetric(vertical: 5),
               child: Text(
                 'Singer Name',
                 style: kSingerNameTextStyle,
@@ -60,12 +60,13 @@ class _SongPlayerState extends State<SongPlayer> {
             SongSlider(),
             PlayerIcons(),
             Padding(
-              padding: EdgeInsets.only(top: 15.0),
+              padding: EdgeInsets.only(top: 5),
               child: Row(
                 children: [
                   Icon(
                     Feather.speaker,
                     color: Colors.grey,
+                    size: 18,
                   ),
                   Expanded(
                     child: SizedBox(),
@@ -73,6 +74,7 @@ class _SongPlayerState extends State<SongPlayer> {
                   Icon(
                     Feather.share_2,
                     color: Colors.white,
+                    size: 18,
                   ),
                 ],
               ),

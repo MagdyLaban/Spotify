@@ -23,17 +23,17 @@ class _PlayerIconsState extends State<PlayerIcons> {
           },
         ),
         Icon(
-          Feather.skip_back,
+          Icons.skip_previous,
           color: Colors.grey,
           size: 40,
         ),
         Icon(
-          Feather.play_circle,
+          Icons.play_circle_filled,
           color: Colors.white,
-          size: 65,
+          size: 80,
         ),
         Icon(
-          Feather.skip_forward,
+          Icons.skip_next,
           color: Colors.white,
           size: 40,
         ),

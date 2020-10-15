@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotifynew/screens/songplayer_screen.dart';
 import 'package:spotifynew/utilities/constant.dart';
 
 class LikesScreen extends StatefulWidget {
@@ -77,69 +78,78 @@ class _LikesScreenState extends State<LikesScreen> {
                   (context, index) {
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Color(0xff282828),
-                            borderRadius: BorderRadius.circular(12)),
-                        child: Row(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.grey[800],
-                                  borderRadius: BorderRadius.only(
-                                      bottomLeft: Radius.circular(12),
-                                      topLeft: Radius.circular(12))),
-                              width: 80,
-                              height: 80,
-                              child: Icon(
-                                Icons.play_arrow,
-                                color: Colors.white,
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SongPlayer(),
+                              ));
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Color(0xff282828),
+                              borderRadius: BorderRadius.circular(12)),
+                          child: Row(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.grey[800],
+                                    borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(12),
+                                        topLeft: Radius.circular(12))),
+                                width: 80,
+                                height: 80,
+                                child: Icon(
+                                  Icons.play_arrow,
+                                  color: Colors.white,
+                                ),
                               ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Song Name',
-                                    style: TextStyle(
-                                        fontSize: 18,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Text(
-                                    'Artist Name',
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      color: Colors.grey,
+                              Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Song Name',
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold),
                                     ),
-                                  ),
-                                ],
+                                    SizedBox(
+                                      height: 5,
+                                    ),
+                                    Text(
+                                      'Artist Name',
+                                      style: TextStyle(
+                                        fontSize: 15,
+                                        color: Colors.grey,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                            SizedBox(
-                              width: 80,
-                            ),
-                            IconButton(
-                              icon: isLiked ? kLikedIcon : kUnLikedIcon,
-                              onPressed: () {
-                                setState(() {
-                                  !isLiked ? isLiked = true : isLiked = false;
-                                });
-                              },
-                            ),
-                            IconButton(
-                              icon: Icon(
-                                Icons.more_vert,
-                                color: Colors.white,
+                              SizedBox(
+                                width: 80,
                               ),
-                              onPressed: () {},
-                            ),
-                          ],
+                              IconButton(
+                                icon: isLiked ? kLikedIcon : kUnLikedIcon,
+                                onPressed: () {
+                                  setState(() {
+                                    !isLiked ? isLiked = true : isLiked = false;
+                                  });
+                                },
+                              ),
+                              IconButton(
+                                icon: Icon(
+                                  Icons.more_vert,
+                                  color: Colors.white,
+                                ),
+                                onPressed: () {},
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     );
