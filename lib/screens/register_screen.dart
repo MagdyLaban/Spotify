@@ -22,7 +22,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       body: Container(
         width: screenSize.width,
         height: screenSize.height,
-        decoration: BoxDecoration(gradient: kPurpleGradient),
+        decoration: kHomeScreenGradient,
         child: Column(
           children: [
             Expanded(

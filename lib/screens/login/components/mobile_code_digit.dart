@@ -15,7 +15,7 @@ class _MobileCodeDigitState extends State<MobileCodeDigit> {
           fontSize: 25, color: Colors.white, fontWeight: FontWeight.w700),
       cursorColor: Colors.white,
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 12),
+        contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(6.0),
         ),

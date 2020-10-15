@@ -29,7 +29,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
           ),
           NextButton(
             text: 'NEXT',
-            active: false,
+            active: true,
             onPress: () {
               FocusScope.of(context).unfocus();
               Navigator.push(

@@ -17,6 +17,8 @@ class _UserNameScreenState extends State<UserNameScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomPadding: false,
       appBar: CustomAppBar(),
       backgroundColor: kBackgroundColor,
       body: Column(

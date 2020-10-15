@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:spotifynew/screens/artists_screen.dart';
-import 'package:spotifynew/screens/bottom_nav_screens/bottom_nav_bar_screen.dart';
 import 'package:spotifynew/screens/login/components/custom_digit_row.dart';
 import 'package:spotifynew/screens/signup/components/next_button.dart';
 import 'package:spotifynew/screens/signup/components/signup_appbar.dart';
@@ -30,7 +29,7 @@ class _MobileCodeState extends State<MobileCode> {
           ),
           NextButton(
             text: 'NEXT',
-            active: false,
+            active: true,
             onPress: () {
               Navigator.pushAndRemoveUntil(
                   context,

@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 const kPrimaryColor = Color(0xFF1DB954);
 
 const kHomeScreenGradient = BoxDecoration(
+  image: DecorationImage(
+    image: AssetImage('assets/images/2.jpg'),
+    fit: BoxFit.fitHeight,
+  ),
   gradient: LinearGradient(
     begin: Alignment.bottomCenter,
     end: Alignment.topCenter,
@@ -163,3 +167,8 @@ const kLikedIcon = Icon(
   Icons.favorite,
   color: kPrimaryColor,
 );
+
+const kSongNameTextStyle =
+    TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 25);
+const kSingerNameTextStyle =
+    TextStyle(color: Colors.grey, fontWeight: FontWeight.w400, fontSize: 20);
