@@ -15,7 +15,7 @@ class _SearchScreenState extends State<SearchScreen> {
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 2),
         child: CustomScrollView(
           slivers: [
             SliverAppBarWithSearch(

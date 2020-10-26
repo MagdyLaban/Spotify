@@ -172,3 +172,4 @@ const kSongNameTextStyle =
     TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 25);
 const kSingerNameTextStyle =
     TextStyle(color: Colors.grey, fontWeight: FontWeight.w400, fontSize: 20);
+const TextStyle kSubtitleStyle = TextStyle(color: Colors.grey, fontSize: 12);

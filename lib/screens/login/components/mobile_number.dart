@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spotifynew/screens/login/country_screen.dart';
+import 'package:spotifynew/utilities/constant.dart';
 
 class MobileNumber extends StatefulWidget {
   @override
@@ -26,7 +27,7 @@ class _MobileNumberState extends State<MobileNumber> {
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height * 0.14,
       decoration: BoxDecoration(
-        color: Colors.grey.withOpacity(0.6),
+        color: kSecondaryColor2,
         borderRadius: BorderRadius.circular(3.0),
       ),
       child: Column(

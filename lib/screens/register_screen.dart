@@ -29,7 +29,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               child: Image(
                 height: 90,
                 width: 90,
-                image: AssetImage('assets/images/spotify.png'),
+                image: AssetImage('assets/images/spotify.png',)
               ),
             ),
             Padding(

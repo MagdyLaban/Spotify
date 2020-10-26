@@ -12,6 +12,18 @@ class PremiumScreen extends StatefulWidget {
 }
 
 class _PremiumScreenState extends State<PremiumScreen> {
+
+  PageController _controller = PageController(
+    initialPage: 0,
+    viewportFraction: 0.82
+  );
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   final _currentPageNotifier = ValueNotifier<int>(0);
   _buildCircleIndicator() {
     return Padding(
@@ -60,6 +72,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
             SizedBox(
               height: 150,
               child: PageView(
+                controller: _controller,
                 dragStartBehavior: DragStartBehavior.down,
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
@@ -279,7 +292,7 @@ class PremiumCompareCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 30),
+      margin: EdgeInsets.symmetric(horizontal: 15),
       height: 150,
       child: Card(
         elevation: 5,

@@ -67,8 +67,8 @@ class _SettingScreenState extends State<SettingScreen> {
                 ),
               ),
               ProfileButton(),
-              Mood(text: 'Data Saver'),
-              SettingItemSwitch(
+              Title(text: 'Data Saver'),
+              SettingItemWithSwitch(
                 title: 'On',
                 item: 'Sets your music quality to low and disables canvas',
                 switchVal: switch1Val,
@@ -78,7 +78,7 @@ class _SettingScreenState extends State<SettingScreen> {
                   });
                 },
               ),
-              Mood(text: 'Playback'),
+              Title(text: 'Playback'),
               SettingItem(
                 title: 'Crossfade',
                 subtitle: 'Allows you to crossfade between songs',
@@ -125,8 +125,8 @@ class _SettingScreenState extends State<SettingScreen> {
                     )
                   ],
                 ),
-              ),
-              SettingItemSwitch(
+              ),     //<< Slider
+              SettingItemWithSwitch(
                 title: 'Gapless',
                 item: 'Allows gapless playback',
                 switchVal: switch2Val,
@@ -136,7 +136,7 @@ class _SettingScreenState extends State<SettingScreen> {
                   });
                 },
               ),
-              SettingItemSwitch(
+              SettingItemWithSwitch(
                 title: 'Automix',
                 item: 'Allow smooth transitions between songs in a playlist .',
                 switchVal: switch3Val,
@@ -146,7 +146,7 @@ class _SettingScreenState extends State<SettingScreen> {
                   });
                 },
               ),
-              SettingItemSwitch(
+              SettingItemWithSwitch(
                 title: 'Allow Explict Content',
                 item: 'Turn on to play explict content ',
                 switchVal: switch4Val,
@@ -156,7 +156,7 @@ class _SettingScreenState extends State<SettingScreen> {
                   });
                 },
               ),
-              SettingItemSwitch(
+              SettingItemWithSwitch(
                 title: 'Show unplayable songs',
                 item: 'Show songs that are unplayable .',
                 switchVal: switch5Val,
@@ -166,17 +166,17 @@ class _SettingScreenState extends State<SettingScreen> {
                   });
                 },
               ),
-              SettingItemSwitch(
+              SettingItemWithSwitch(
                 title: 'Normalize Volume',
                 item: 'Set tje same volume level for all tracks ',
                 switchVal: switch6Val,
-                changeSwitchVal: (bool newval) {
+                changeSwitchVal: (bool newVal) {
                   setState(() {
-                    switch6Val = newval;
+                    switch6Val = newVal;
                   });
                 },
               ),
-              SettingItemSwitch(
+              SettingItemWithSwitch(
                 title: 'Device Broadcast Status',
                 item:
                     'Allow other apps on your device to see what you are listening to.',
@@ -187,7 +187,7 @@ class _SettingScreenState extends State<SettingScreen> {
                   });
                 },
               ),
-              SettingItemSwitch(
+              SettingItemWithSwitch(
                 title: 'Autoplay',
                 item:
                     'Keep on listening to similar tracks when your music ends .',
@@ -198,11 +198,11 @@ class _SettingScreenState extends State<SettingScreen> {
                   });
                 },
               ),
-              Mood(text: 'Devices'),
+              Title(text: 'Devices'),
               SettingItem(
                   title: 'Connect to a device',
                   subtitle: 'Listen and Control Spotify on your devices'),
-              SettingItemSwitch(
+              SettingItemWithSwitch(
                 title: 'Show local device only',
                 item:
                     'Only show devices on your WiFi or ethernet in the devices menu .',
@@ -213,7 +213,7 @@ class _SettingScreenState extends State<SettingScreen> {
                   });
                 },
               ),
-              SettingItemSwitch(
+              SettingItemWithSwitch(
                 title: 'Spotify Connect in background',
                 item:
                     'Allow Spotify Connect to keep Spotify running when the app in background',
@@ -224,11 +224,11 @@ class _SettingScreenState extends State<SettingScreen> {
                   });
                 },
               ),
-              Mood(text: 'Connect to Apps'),
+              Title(text: 'Connect to Apps'),
               SettingItem(
                   title: 'Navigation',
                   subtitle: 'Connect with navigation apps'),
-              Mood(text: 'Car mode'),
+              Title(text: 'Car mode'),
               Row(children: <Widget>[
                 Expanded(
                     flex: 2,
@@ -263,8 +263,8 @@ class _SettingScreenState extends State<SettingScreen> {
                     }).toList(),
                   ),
                 ),
-              ]),
-              SettingItemSwitch(
+              ]),   // << Dropdown menu
+              SettingItemWithSwitch(
                 title: 'Keep app open on screen',
                 item:
                     'Turn this on and the app will stay up on your screen while you are in car mode',
@@ -275,8 +275,8 @@ class _SettingScreenState extends State<SettingScreen> {
                   });
                 },
               ),
-              Mood(text: 'Social'),
-              SettingItemSwitch(
+              Title(text: 'Social'),
+              SettingItemWithSwitch(
                 title: 'Private session',
                 item: 'Start a private session to listen anonymously',
                 switchVal: switch12Val,
@@ -286,7 +286,7 @@ class _SettingScreenState extends State<SettingScreen> {
                   });
                 },
               ),
-              SettingItemSwitch(
+              SettingItemWithSwitch(
                 title: 'Listening activity',
                 item: 'Share what i listen to with my followers on Spotify .',
                 switchVal: switch13Val,
@@ -296,8 +296,8 @@ class _SettingScreenState extends State<SettingScreen> {
                   });
                 },
               ),
-              Mood(text: 'Connect to Facebook'),
-              Mood(text: 'Storage'),
+              Title(text: 'Connect to Facebook'),
+              Title(text: 'Storage'),
               StorageTrack(),
               StorageSpace(
                 text: 'Other apps                   34.4 GB',
@@ -310,11 +310,11 @@ class _SettingScreenState extends State<SettingScreen> {
               StorageSpace(
                   text: 'Free                              72.3 GB',
                   color: Color(0xff282828)),
-              Mood(text: 'Notifications'),
+              Title(text: 'Notifications'),
               SettingItem(
                   title: 'Notifications',
                   subtitle: 'Choose which notifications to receive '),
-              Mood(text: 'About'),
+              Title(text: 'About'),
               SettingItem(title: 'Version', subtitle: '8.5.76.962'),
               SettingItem(
                   title: 'Third-party software',
@@ -328,7 +328,7 @@ class _SettingScreenState extends State<SettingScreen> {
               SettingItem(
                   title: 'Support',
                   subtitle: 'Get help from us and the community .'),
-              Mood(text: 'Other'),
+              Title(text: 'Other'),
               SettingItem(
                   title: 'Log out',
                   subtitle: 'You are logged in as Esam Smesm'),
@@ -434,9 +434,9 @@ class ProfileButton extends StatelessWidget {
   }
 }
 
-class SettingItemSwitch extends StatelessWidget {
+class SettingItemWithSwitch extends StatelessWidget {
 
-  SettingItemSwitch(
+  SettingItemWithSwitch(
       {@required this.title,
       @required this.item,
       this.switchVal,
@@ -472,9 +472,9 @@ class SettingItemSwitch extends StatelessWidget {
   }
 }
 
-class Mood extends StatelessWidget {
+class Title extends StatelessWidget {
   final String text;
-  Mood({@required this.text});
+  Title({@required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -508,4 +508,4 @@ class SettingItem extends StatelessWidget {
   }
 }
 
-const TextStyle kSubtitleStyle = TextStyle(color: Colors.grey, fontSize: 12);
+
